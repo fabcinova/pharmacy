@@ -4,7 +4,14 @@
 require __DIR__ . '/../libs/autoload.php';
 require __DIR__. '/../libs/dibi/dibi.php';
 
-dibi::connect("localhost", "root", "");
+dibi::connect(array(
+    'driver'   => 'mysql',
+    'host'     => 'localhost',
+    'username' => 'root',
+    'password' => '',
+    'database' => 'pharmacy',
+    'charset'  => 'utf8',
+));
 
 $configurator = new Nette\Config\Configurator;
 

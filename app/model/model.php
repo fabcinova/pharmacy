@@ -6,23 +6,22 @@
  * @author dominika
  */
 class model extends Nette\Object{
-
-    protected $ID;
-    protected $ID_lekarny;
     
-    public function __construct() {
-        // DB select
-    }
-    
-    public function create()
+    /**
+     * @todo It would be great to compare table param to array of table names.
+     * @param type $table
+     * @param type $id
+     */
+    protected function load($table, $id)
     {
-        // DB insert
+        $result = dibi::query("SELECT * FROM {$table} WHERE id=%i", $id);
+        $row = $result->fetch();
+        
+        foreach ($row as $key => $value)
+        {
+            $this->$key=$value;
+        }
     }
-
-    public function save()
-    {
-        // DB update
-    } 
 }
 
 ?>
