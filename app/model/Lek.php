@@ -7,10 +7,10 @@
  */
 class Lek extends Model{
 
-    protected $ID;
-    protected $nazev;
-    protected $ucinna_latka;
-    protected $predpis;
+    public $ID;
+    public $nazev;
+    public $ucinna_latka;
+    public $predpis;
 
     public function __construct($id)
     {
@@ -31,6 +31,23 @@ class Lek extends Model{
         dibi::query($query, $nazev, $latka, $predpis);
         
         return dibi::getInsertId();
+    }
+    
+    public function save()
+    {
+        $query = "UPDATE `leky` SET nazev=%s, ucinna_latka=%s, predpis=%i WHERE id=%i;";
+        dibi::query($query, $this->nazev, $this->ucinna_latka, $this->predpis, $this->ID);
+    }
+    
+    public static function loadAll()
+    {
+        $query = "SELECT id FROM leky";
+        
+        foreach (dibi::query($query) as $row)
+        {
+           $array[] = new self($row->id);
+        }
+        return $array;
     }
     
     public static function delete($id)

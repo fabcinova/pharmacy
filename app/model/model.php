@@ -15,6 +15,10 @@ class Model extends Nette\Object{
     protected function load($table, $id)
     {
         $result = dibi::query("SELECT * FROM {$table} WHERE id=%i", $id);
+        if ($result->getRowCount() != 1)
+        {
+            throw new Exception("Objekt nenalezen.");
+        }
         $row = $result->fetch();
         
         // prasarna, ktora naplni triedne premenne hodnotami z tabulky
