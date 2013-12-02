@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Description of model
+ * Description of Model
  *
  * @author dominika
  */
-class model extends Nette\Object{
+class Model extends Nette\Object{
     
     /**
      * @todo It would be great to compare table param to array of table names.
@@ -17,11 +17,10 @@ class model extends Nette\Object{
         $result = dibi::query("SELECT * FROM {$table} WHERE id=%i", $id);
         $row = $result->fetch();
         
+        // prasarna, ktora naplni triedne premenne hodnotami z tabulky
         foreach ($row as $key => $value)
         {
             $this->$key=$value;
         }
     }
 }
-
-?>

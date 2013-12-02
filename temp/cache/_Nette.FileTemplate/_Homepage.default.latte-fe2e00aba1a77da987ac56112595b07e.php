@@ -1,42 +1,23 @@
-<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.85334100 1382971704";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"D:\git_projects\lekarna\app\templates\Homepage\default.latte";i:2;i:1382971349;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.93536700 1385586062";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"D:\git_projects\lekarna\app\templates\Homepage\default.latte";i:2;i:1385586060;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: D:\git_projects\lekarna\app\templates\Homepage\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'ps95r703dz')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'whmlv2ak7d')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb317527fbf2_content')) { function _lb317527fbf2_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbcad155e895_content')) { function _lbcad155e895_content($_l, $_args) { extract($_args)
 ?><div id="banner">
 <?php call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())  ?>
 </div>
 
 <div id="content">
-	<h2>You have successfully created your Nette Framework project.</h2>
-
-	<div class="box">
-		<h2><img src="http://files.nette.org/sandbox/sourcecode.png" alt="" />Explore source codes</h2>
-		<p>See source code of <a href="#template">this page template</a>, <a href="#layout">layout template</a> and
-		<a href="#presenter">corresponding presenter</a>. And feel free to modify them!</p>
-	</div>
-
-	<div class="box">
-		<h2><a href="<?php echo htmlSpecialChars($basePath) ?>/adminer/"><img src="http://files.nette.org/sandbox/database.png" alt="" />Manage database tables</a></h2>
-		<p>Manage your database using pre-installed tool <a href="<?php echo htmlSpecialChars($basePath) ?>/adminer/">Adminer</a> with an easy to use GUI.<p>
-	</div>
-
-	<div class="box">
-		<h2><a href="http://doc.nette.org/quickstart"><img src="http://files.nette.org/sandbox/book.png" alt="" />Read<br />Quick-start tutorial</a></h2>
-		<p>If you are exploring Nette Framework for the first time, you should read the
-		<a href="http://doc.nette.org/quickstart">Quick Start</a>, <a href="http://doc.nette.org">documentation</a>,
-		<a href="http://pla.nette.org">tutorials</a> and <a href="http://forum.nette.org">forum</a>.</p>
-	</div>
-
-	<h2>We hope you enjoy this framework!</h2>
+	<h2>Sign in!</h2>
+	<h2><img src="http://upload.wikimedia.org/wikipedia/commons/1/1a/First_Aid_Green_Cross.png" alt="" /></h2>
 
 	<section id="template">
 		<h2>This page template located at <span><?php echo Nette\Templating\Helpers::escapeHtml(strstr($presenter->template->getFile(), 'app'), ENT_NOQUOTES) ?></span></h2>
@@ -44,21 +25,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb317527fbf2_content')) { func
 		<pre><code class="jush"><?php echo Nette\Templating\Helpers::escapeHtml(file_get_contents($presenter->template->getFile()), ENT_NOQUOTES) ?></code></pre>
 	</section>
 
-	<section id="layout">
-		<h2>Layout template located at <span><?php echo Nette\Templating\Helpers::escapeHtml(strstr($template->getFile(), 'app'), ENT_NOQUOTES) ?></span></h2>
-
-		<pre><code class="jush"><?php echo Nette\Templating\Helpers::escapeHtml(file_get_contents($template->getFile()), ENT_NOQUOTES) ?></code></pre>
-	</section>
-
-	<section id="presenter">
-		<h2>Current presenter located at <span><?php echo Nette\Templating\Helpers::escapeHtml(strstr($presenter->reflection->fileName, 'app'), ENT_NOQUOTES) ?></span></h2>
-
-		<pre><code class="jush-php"><?php echo Nette\Templating\Helpers::escapeHtml(file_get_contents($presenter->reflection->fileName), ENT_NOQUOTES) ?></code></pre>
-	</section>
-
-	<footer>PHP <?php echo Nette\Templating\Helpers::escapeHtml(PHP_VERSION, ENT_NOQUOTES) ?> |
-		<?php if (isset($_SERVER['SERVER_SOFTWARE'])): ?>Server <?php echo Nette\Templating\Helpers::escapeHtml($_SERVER['SERVER_SOFTWARE'], ENT_NOQUOTES) ;endif ?> |
-		Nette Framework <?php echo Nette\Templating\Helpers::escapeHtml(Nette\Framework::VERSION, ENT_NOQUOTES) ?></footer>
+	<footer>Created by xfabci00 and xnetko00 in 2013.</footer>
 </div>
 <?php
 }}
@@ -66,15 +33,15 @@ if (!function_exists($_l->blocks['content'][] = '_lb317527fbf2_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lba2a606a957_title')) { function _lba2a606a957_title($_l, $_args) { extract($_args)
-?>	<h1>Congratulations!</h1>
+if (!function_exists($_l->blocks['title'][] = '_lba2f319d364_title')) { function _lba2f319d364_title($_l, $_args) { extract($_args)
+?>	<h1>Lékárna u Barči a Domči</h1>
 <?php
 }}
 
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lb68c298dfc7_scripts')) { function _lb68c298dfc7_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lb235f88bdb8_scripts')) { function _lb235f88bdb8_scripts($_l, $_args) { extract($_args)
 ;Nette\Latte\Macros\UIMacros::callBlockParent($_l, 'scripts', get_defined_vars()) ?>
 <script src="http://jush.sourceforge.net/jush.js"></script>
 <script>
@@ -93,7 +60,7 @@ if (!function_exists($_l->blocks['scripts'][] = '_lb68c298dfc7_scripts')) { func
 //
 // block head
 //
-if (!function_exists($_l->blocks['head'][] = '_lb5acef70e24_head')) { function _lb5acef70e24_head($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['head'][] = '_lbeb722c5646_head')) { function _lbeb722c5646_head($_l, $_args) { extract($_args)
 ?><style>
 html { overflow-y: scroll; }
 body { font: 14px/1.65 Verdana, "Geneva CE", lucida, sans-serif; background: #3484d2; color: #333; margin: 38px auto; max-width: 940px; min-width: 770px; }

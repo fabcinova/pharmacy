@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Description of modelLek
+ * Description of Lek
  *
  * @author dominika
  */
@@ -22,7 +22,7 @@ class Lek extends Model{
      * @param string $nazev
      * @param string $latka
      * @param bool $predpis
-     * @return integer
+     * @return integer id of last inserted
      */
     public static function create($nazev, $latka, $predpis)
     {
@@ -31,5 +31,11 @@ class Lek extends Model{
         dibi::query($query, $nazev, $latka, $predpis);
         
         return dibi::getInsertId();
+    }
+    
+    public static function delete($id)
+    {
+        $query = "DELETE FROM `leky` WHERE `ID` = %i;";
+        dibi::query($query, $id);
     }
 }
