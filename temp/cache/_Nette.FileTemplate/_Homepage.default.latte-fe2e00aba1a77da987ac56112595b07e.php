@@ -1,23 +1,24 @@
-<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.93536700 1385586062";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"D:\git_projects\lekarna\app\templates\Homepage\default.latte";i:2;i:1385586060;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.38628700 1386102408";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"D:\git_projects\lekarna\app\templates\Homepage\default.latte";i:2;i:1386102405;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: D:\git_projects\lekarna\app\templates\Homepage\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'whmlv2ak7d')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '6sxfskeuot')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lbcad155e895_content')) { function _lbcad155e895_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb1ed0e6f430_content')) { function _lb1ed0e6f430_content($_l, $_args) { extract($_args)
 ?><div id="banner">
 <?php call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())  ?>
 </div>
 
 <div id="content">
-	<h2>Sign in!</h2>
-	<h2><img src="http://upload.wikimedia.org/wikipedia/commons/1/1a/First_Aid_Green_Cross.png" alt="" /></h2>
+	<p><a href="<?php echo htmlSpecialChars($_control->link("Lek:default")) ?>">Seznam leku, ktere nase lekarna nabizi</a></p>
+        <p><a href="<?php echo htmlSpecialChars($_control->link("Pobocka:default")) ?>
+">Seznam nasich pobocek</a></p>
 
 	<section id="template">
 		<h2>This page template located at <span><?php echo Nette\Templating\Helpers::escapeHtml(strstr($presenter->template->getFile(), 'app'), ENT_NOQUOTES) ?></span></h2>
@@ -33,15 +34,15 @@ if (!function_exists($_l->blocks['content'][] = '_lbcad155e895_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lba2f319d364_title')) { function _lba2f319d364_title($_l, $_args) { extract($_args)
-?>	<h1>Lékárna u Barči a Domči</h1>
+if (!function_exists($_l->blocks['title'][] = '_lb8cdc517ea9_title')) { function _lb8cdc517ea9_title($_l, $_args) { extract($_args)
+?>	<h1><?php echo Nette\Templating\Helpers::escapeHtml($nadpis, ENT_NOQUOTES) ?></h1>
 <?php
 }}
 
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lb235f88bdb8_scripts')) { function _lb235f88bdb8_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lb8ffdbbf85f_scripts')) { function _lb8ffdbbf85f_scripts($_l, $_args) { extract($_args)
 ;Nette\Latte\Macros\UIMacros::callBlockParent($_l, 'scripts', get_defined_vars()) ?>
 <script src="http://jush.sourceforge.net/jush.js"></script>
 <script>
@@ -60,7 +61,7 @@ if (!function_exists($_l->blocks['scripts'][] = '_lb235f88bdb8_scripts')) { func
 //
 // block head
 //
-if (!function_exists($_l->blocks['head'][] = '_lbeb722c5646_head')) { function _lbeb722c5646_head($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['head'][] = '_lbaf7257f30f_head')) { function _lbaf7257f30f_head($_l, $_args) { extract($_args)
 ?><style>
 html { overflow-y: scroll; }
 body { font: 14px/1.65 Verdana, "Geneva CE", lucida, sans-serif; background: #3484d2; color: #333; margin: 38px auto; max-width: 940px; min-width: 770px; }
@@ -74,7 +75,7 @@ a { color: #006aeb; padding: 3px 1px; }
 a:hover, a:active, a:focus { background-color: #006aeb; text-decoration: none; color: white; }
 
 #banner { border-radius: 12px 12px 0 0; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAB5CAMAAADPursXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGBQTFRFD1CRDkqFDTlmDkF1D06NDT1tDTNZDk2KEFWaDTZgDkiCDTtpDT5wDkZ/DTBVEFacEFOWD1KUDTRcDTFWDkV9DkR7DkN4DkByDTVeDC9TDThjDTxrDkeADkuIDTRbDC9SbsUaggAAAEdJREFUeNqkwYURgAAQA7DH3d3335LSKyxAYpf9vWCpnYbf01qcOdFVXc14w4BznNTjkQfsscAdU3b4wIh9fDVYc4zV8xZgAAYaCMI6vPgLAAAAAElFTkSuQmCC); }
-#banner h1 { color: white; font-size: 50px; line-height: 121px; margin: 0; padding-left: 40px; background: url(http://files.nette.org/sandbox/logo.png) no-repeat 95%; text-shadow: 1px 1px 0 rgba(0, 0, 0, .9); }
+#banner h1 { color: white; font-size: 50px; line-height: 121px; margin: 0; padding-left: 40px; background: url(http://upload.wikimedia.org/wikipedia/commons/0/05/Green_Cross.png) no-repeat 95%; text-shadow: 1px 1px 0 rgba(0, 0, 0, .9); }
 
 #content { background: white; border: 1px solid #eff4f7; border-radius: 0 0 12px 12px; padding: 10px 40px; }
 #content > h2 { font-size: 130%; color: #666; clear: both; padding: 1.2em 0; margin: 0; }

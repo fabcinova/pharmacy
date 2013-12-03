@@ -1,0 +1,18 @@
+<h1>Pobocky</h1>
+
+<table>
+    <tr>
+        <th>Ulice</th>
+        <th>Cislo popisne</th>
+        <th>PSC</th>
+        <th>Mesto</th>
+    </tr>
+        {foreach $adresy as $Adresa}
+            <tr>
+                <td>{$Adresa->ulice}</td>
+                <td>{$Adresa->cislo_popisne}</td>
+                <td>{$Adresa->psc}</td>
+                <td>{$Adresa->mesto}</td>
+            </tr> 
+        {/foreach}
+</table>

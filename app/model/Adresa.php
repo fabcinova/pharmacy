@@ -7,11 +7,11 @@
  */
 class Adresa extends Model{
     
-    protected $id;
-    protected $ulice;
-    protected $cislo_popisne;
-    protected $psc;
-    protected $mesto;
+    public $id;
+    public $ulice;
+    public $cislo_popisne;
+    public $psc;
+    public $mesto;
 
     public function __construct($id)
     {

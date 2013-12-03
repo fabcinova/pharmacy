@@ -1,5 +1,4 @@
 <?php
-
 use Nette\Application\UI\Form;
 
 /**
@@ -19,6 +18,25 @@ class LekPresenter extends BasePresenter {
     public function actionCreate()
     {
 
+    }
+    
+    public function actionEdit($ID)
+    {
+        $this->id = $ID;
+    }
+    
+    public function actionDelete($ID)
+    {
+        try
+        {
+            Lek::delete($ID);
+        }
+        catch(Exception $ex)
+        {
+            $this->flashMessage("Chyba: Lék nebyl smazán!", "error");
+        }
+        $this->flashMessage("Odstraněno.", "info");
+        $this->redirect("Lek:default");
     }
     
 
@@ -95,26 +113,6 @@ class LekPresenter extends BasePresenter {
             $this->flashMessage("Neaktualizovano.", "error");
         }
         $this->flashMessage("Aktualizovano.", "info");
-        $this->redirect("Lek:default");
-    }
-    
-    public function actionEdit($ID)
-    {
-        $this->id = $ID;
-        
-    }
-    
-    public function actionDelete($ID)
-    {
-        try
-        {
-            Lek::delete($ID);
-        }
-        catch(Exception $ex)
-        {
-            $this->flashMessage("Chyba: Lék nebyl smazán!", "error");
-        }
-        $this->flashMessage("Odstraněno.", "info");
         $this->redirect("Lek:default");
     }
 }
