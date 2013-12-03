@@ -1,0 +1,20 @@
+<h1>Leky</h1>
+
+<a n:href="Lek:create">Vložit nový</a>
+
+<table>
+    <tr>
+        <th>Název</th>
+        <th>Účinná látka</th>
+        <th>Předpis</th>
+    </tr>
+        {foreach $leky as $Lek}
+            <tr>
+                <td>{$Lek->nazev}</td>
+                <td>{$Lek->ucinna_latka}</td>
+                <td>{$Lek->predpis ? "ano" : "-"}</td>
+                <td><a n:href="Lek:edit $Lek->ID">Upravit</a></td>
+                <td><a n:href="Lek:delete $Lek->ID" onClick="return confirm('Opravdu smazat {$Lek->nazev} ?')" >Smazat</a></td>
+            </tr> 
+        {/foreach}
+</table>
