@@ -1,16 +1,16 @@
-<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.38628700 1386102408";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"D:\git_projects\lekarna\app\templates\Homepage\default.latte";i:2;i:1386102405;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.58950700 1386109982";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"D:\git_projects\lekarna\app\templates\Homepage\default.latte";i:2;i:1386109978;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: D:\git_projects\lekarna\app\templates\Homepage\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '6sxfskeuot')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'pulkc7hnfa')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb1ed0e6f430_content')) { function _lb1ed0e6f430_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb9da3e79382_content')) { function _lb9da3e79382_content($_l, $_args) { extract($_args)
 ?><div id="banner">
 <?php call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())  ?>
 </div>
@@ -19,6 +19,8 @@ if (!function_exists($_l->blocks['content'][] = '_lb1ed0e6f430_content')) { func
 	<p><a href="<?php echo htmlSpecialChars($_control->link("Lek:default")) ?>">Seznam leku, ktere nase lekarna nabizi</a></p>
         <p><a href="<?php echo htmlSpecialChars($_control->link("Pobocka:default")) ?>
 ">Seznam nasich pobocek</a></p>
+        <p><a href="<?php echo htmlSpecialChars($_control->link("Prispevek:default")) ?>
+">Importovat prispevky</a></p>
 
 	<section id="template">
 		<h2>This page template located at <span><?php echo Nette\Templating\Helpers::escapeHtml(strstr($presenter->template->getFile(), 'app'), ENT_NOQUOTES) ?></span></h2>
@@ -34,7 +36,7 @@ if (!function_exists($_l->blocks['content'][] = '_lb1ed0e6f430_content')) { func
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb8cdc517ea9_title')) { function _lb8cdc517ea9_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lba309de0d03_title')) { function _lba309de0d03_title($_l, $_args) { extract($_args)
 ?>	<h1><?php echo Nette\Templating\Helpers::escapeHtml($nadpis, ENT_NOQUOTES) ?></h1>
 <?php
 }}
@@ -42,7 +44,7 @@ if (!function_exists($_l->blocks['title'][] = '_lb8cdc517ea9_title')) { function
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lb8ffdbbf85f_scripts')) { function _lb8ffdbbf85f_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lbb62e53a9e8_scripts')) { function _lbb62e53a9e8_scripts($_l, $_args) { extract($_args)
 ;Nette\Latte\Macros\UIMacros::callBlockParent($_l, 'scripts', get_defined_vars()) ?>
 <script src="http://jush.sourceforge.net/jush.js"></script>
 <script>
@@ -61,7 +63,7 @@ if (!function_exists($_l->blocks['scripts'][] = '_lb8ffdbbf85f_scripts')) { func
 //
 // block head
 //
-if (!function_exists($_l->blocks['head'][] = '_lbaf7257f30f_head')) { function _lbaf7257f30f_head($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['head'][] = '_lb3690418aa1_head')) { function _lb3690418aa1_head($_l, $_args) { extract($_args)
 ?><style>
 html { overflow-y: scroll; }
 body { font: 14px/1.65 Verdana, "Geneva CE", lucida, sans-serif; background: #3484d2; color: #333; margin: 38px auto; max-width: 940px; min-width: 770px; }

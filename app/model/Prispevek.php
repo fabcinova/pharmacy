@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * Description of Prispevek
+ *
+ * @author dominika
+ */
+class Prispevek extends Model{
+    
+    public $id;
+    public $lek;
+    public $pojistovna;
+    public $vyse_prispevku;
+    public $platnost_od;
+    public $platnost_do;
+
+    public function __construct($id)
+    {
+        $this->load("prispevky", $id);
+    }
+    
+    /**
+     * @return integer id of last inserted
+     */
+    public static function create($lek, $pojistovna, $vyse_prispevku, $platnost_od, $platnost_do)
+    {
+        $query = "INSERT INTO `prispevky` (`lek`, `pojistovna`, `vyse_prispevku`, `platnost_od`, `platnost_do`) 
+            VALUES (%i, %i, %i, %d, %d);";
+        dibi::query($query, $lek, $pojistovna, $vyse_prispevku, $platnost_od, $platnost_do);
+        
+        return dibi::getInsertId();
+    }
+    
+    public function save()
+    {
+        $query = "UPDATE `prispevky` SET lek=%i, pojistovna=%i, vyse_prispevku=%i, platnost_od=%d, platnost_do=%d WHERE id=%i;";
+        dibi::query($query, $this->lek, $this->pojistovna, $this->vyse_prispevku, $this->platnost_od, $this->platnost_do, $this->ID);
+    }
+    
+    public static function loadAll()
+    {
+        $query = "SELECT id FROM prispevky";
+        
+        foreach (dibi::query($query) as $row)
+        {
+           $array[] = new self($row->id);
+        }
+        return $array;
+    }
+    
+    public static function delete($id)
+    {
+        $query = "DELETE FROM `prispevky` WHERE `ID` = %i;";
+        dibi::query($query, $id);
+    }
+}

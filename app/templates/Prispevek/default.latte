@@ -1,0 +1,24 @@
+<h1>Prispevky</h1>
+
+<a n:href="Prispevek:create">Vložit nový</a>
+
+<table>
+    <tr>
+        <th>Lék</th>
+        <th>Pojišťovna</th>
+        <th>Výše příspěvku</th>
+        <th>Platnost OD</th>
+        <th>Platnost D0</th>
+    </tr>
+        {foreach $prispevky as $Prispevek}
+            <tr>
+                <td>{$Prispevek->lek}</td>
+                <td>{$Prispevek->pojistovna}</td>
+                <td>{$Prispevek->vyse_prispevku}</td>
+                <td>{$Prispevek->platnost_od}</td>
+                <td>{$Prispevek->platnost_do}</td>
+                <td><a n:href="Prispevek:edit $Prispevek->id">Upravit</a></td>
+                <td><a n:href="Prispevek:delete $Prispevek->id" onClick="return confirm('Opravdu smazat prispevek ?')" >Smazat</a></td>
+            </tr> 
+        {/foreach}
+</table>
