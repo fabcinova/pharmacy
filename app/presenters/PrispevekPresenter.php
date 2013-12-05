@@ -21,27 +21,24 @@ class PrispevekPresenter extends BasePresenter {
     public function createComponentCreateForm()
     {        
         $leky = Lek::loadAll(); // vracia pole instancii objektu lek
-        $count_leky = count($leky);
+        $pojistovny = Pojistovna::loadAll();
 
-        $array = array();
-        
-        for($index = 1; $index <= $count_leky; $index++)
+        $array_lek = array();
+        foreach ($leky as $value)
         {
-            $leky[$index]->ID => $leky[$index]->nazev; //kktina, ktora nefachci
-        }
+            $array_lek[$value->ID] = $value->nazev;
+        };
+        
+        $array_pojistovna = array();
+        foreach ($pojistovny as $value)
+        {
+            $array_pojistovna[$value->kod] = $value->nazev;
+        };
         
         $form = new Form();
         
-        $form->addSelect("lek", "Lék",
-                array(
-                    $leky[$index]->ID => $leky[$index]->nazev
-                ));
-        $form->addSelect("pojistovna", "Pojišťovna",
-            array(
-                '201' => 'ČPZP',
-                '203' => 'VOZP',
-            ));
-        $form['pojistovna']->setDefaultValue('203');
+        $form->addSelect("lek", "Lék", $array_lek);
+        $form->addSelect("pojistovna", "Pojišťovna", $array_pojistovna);
         $form->addText("vyse_prispevku", "Výše příspěvku");
         $form->addText("platnost_od", "Platnost od");
         $form->addText("platnost_do", "Platnost do");
