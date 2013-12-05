@@ -1,3 +1,7 @@
+{foreach $flashes as $flash}
+<div class="flash {$flash->type}">{$flash->message}</div>
+{/foreach}
+
 <h1>Prispevky</h1>
 
 <a n:href="Prispevek:create">Vložit nový</a>

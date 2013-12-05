@@ -39,7 +39,8 @@ class PrispevekPresenter extends BasePresenter {
         
         $form->addSelect("lek", "Lék", $array_lek);
         $form->addSelect("pojistovna", "Pojišťovna", $array_pojistovna);
-        $form->addText("vyse_prispevku", "Výše příspěvku");
+        $form->addText("vyse_prispevku", "Výše příspěvku v Kč")
+             ->addRule(Form::INTEGER, 'Výše příspěvku musí být číslo');
         $form->addText("platnost_od", "Platnost od");
         $form->addText("platnost_do", "Platnost do");
         $form->addSubmit("odeslat", "Uložit");

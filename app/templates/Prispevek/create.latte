@@ -1,3 +1,7 @@
+{foreach $flashes as $flash}
+<div class="flash {$flash->type}">{$flash->message}</div>
+{/foreach}
+
 {form createForm}
 <table>
 <tr class="required">
@@ -8,7 +12,7 @@
     <th>{label pojistovna /}</th>
     <td>{input pojistovna}</td>
 </tr>
-<tr>
+<tr class="required">
     <th>{label vyse_prispevku /}</th>
     <td>{input vyse_prispevku}</td>
 </tr>

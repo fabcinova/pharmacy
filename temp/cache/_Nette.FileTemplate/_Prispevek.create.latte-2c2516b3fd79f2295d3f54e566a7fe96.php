@@ -1,10 +1,10 @@
-<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.82003000 1386207366";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"D:\git_projects\lekarna\app\templates\Prispevek\create.latte";i:2;i:1386207363;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.09812200 1386211442";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"D:\git_projects\lekarna\app\templates\Prispevek\create.latte";i:2;i:1386211429;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: D:\git_projects\lekarna\app\templates\Prispevek\create.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'd6jhxsv7pp')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '4w49ulwubi')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 
@@ -16,7 +16,11 @@ if (!empty($_control->snippetMode)) {
 //
 // main template
 //
-Nette\Latte\Macros\FormMacros::renderFormBegin($form = $_form = (is_object("createForm") ? "createForm" : $_control["createForm"]), array()) ?>
+$iterations = 0; foreach ($flashes as $flash): ?>
+<div class="flash <?php echo htmlSpecialChars($flash->type) ?>"><?php echo Nette\Templating\Helpers::escapeHtml($flash->message, ENT_NOQUOTES) ?></div>
+<?php $iterations++; endforeach ?>
+
+<?php Nette\Latte\Macros\FormMacros::renderFormBegin($form = $_form = (is_object("createForm") ? "createForm" : $_control["createForm"]), array()) ?>
 <table>
 <tr class="required">
     <th><?php $_input = is_object("lek") ? "lek" : $_form["lek"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ?></th>
@@ -26,7 +30,7 @@ Nette\Latte\Macros\FormMacros::renderFormBegin($form = $_form = (is_object("crea
     <th><?php $_input = is_object("pojistovna") ? "pojistovna" : $_form["pojistovna"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ?></th>
     <td><?php $_input = (is_object("pojistovna") ? "pojistovna" : $_form["pojistovna"]); echo $_input->getControl()->addAttributes(array()) ?></td>
 </tr>
-<tr>
+<tr class="required">
     <th><?php $_input = is_object("vyse_prispevku") ? "vyse_prispevku" : $_form["vyse_prispevku"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ?></th>
     <td><?php $_input = (is_object("vyse_prispevku") ? "vyse_prispevku" : $_form["vyse_prispevku"]); echo $_input->getControl()->addAttributes(array()) ?></td>
 </tr>
