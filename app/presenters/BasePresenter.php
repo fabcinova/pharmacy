@@ -10,4 +10,8 @@ abstract class BasePresenter extends \Nette\Application\UI\Presenter
         parent::__construct($context);
     }
     
+    public function renderDefault()
+    {
+            $this->template->nadpis = 'LÉKARNA U Barči a Domči';
+    }
 }

@@ -13,20 +13,31 @@
 	<meta name="description" content="">
 	<meta name="robots" content="{$robots}" n:ifset="$robots">
 
-	<title>{block title|striptags|upper}Nette Application Skeleton{/block}</title>
+	<title>{isset($nadpis) ? $nadpis : "Lékárna"}</title>
 
 	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/screen.css">
+	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/style.css">
 	<link rel="stylesheet" media="print" href="{$basePath}/css/print.css">
 	<link rel="shortcut icon" href="{$basePath}/favicon.ico">
 	{block head}{/block}
 </head>
 
 <body>
-	<script> document.documentElement.className+=' js' </script>
+        <div id="banner">
+                <h1 n:block=title>{isset($nadpis) ? $nadpis : "Lékárna"}</h1>
+        </div>
 
-	<div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
+        <div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
 
-	{include #content}
+        <div id="content">
+                <p><a n:href="Lek:default">Seznam leku, ktere nase lekarna nabizi</a></p>
+                <p><a n:href="Pobocka:default">Seznam nasich pobocek</a></p>
+                <p><a n:href="Prispevek:default">Importovat prispevky</a></p>
+
+                {include #content}
+
+                <footer>Created by xfabci00 and xnetko00 in 2013.</footer>
+        </div>
 
 	{block scripts}
 	<script src="{$basePath}/js/jquery.js"></script>

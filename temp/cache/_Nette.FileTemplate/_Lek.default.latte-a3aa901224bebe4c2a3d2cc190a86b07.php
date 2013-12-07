@@ -1,23 +1,17 @@
-<?php //netteCache[01]000377a:2:{s:4:"time";s:21:"0.39416300 1386115923";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:55:"D:\git_projects\lekarna\app\templates\Lek\default.latte";i:2;i:1386115911;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000377a:2:{s:4:"time";s:21:"0.51038800 1386436869";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:55:"D:\git_projects\lekarna\app\templates\Lek\default.latte";i:2;i:1386436858;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: D:\git_projects\lekarna\app\templates\Lek\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'sd4b3ic5gj')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'o11wthgl1a')
 ;
 // prolog Nette\Latte\Macros\UIMacros
-
-// snippets support
-if (!empty($_control->snippetMode)) {
-	return Nette\Latte\Macros\UIMacros::renderSnippets($_control, $_l, get_defined_vars());
-}
-
 //
-// main template
+// block content
 //
-?>
-<h1>Leky</h1>
+if (!function_exists($_l->blocks['content'][] = '_lb5fddaeae3c_content')) { function _lb5fddaeae3c_content($_l, $_args) { extract($_args)
+?><h1>Leky</h1>
 
 <a href="<?php echo htmlSpecialChars($_control->link("Lek:create")) ?>">Vložit nový</a>
 
@@ -39,4 +33,29 @@ if (!empty($_control->snippetMode)) {
 ">Smazat</a></td>
             </tr> 
 <?php $iterations++; endforeach ?>
-</table>
+</table><?php
+}}
+
+//
+// end of blocks
+//
+
+// template extending and snippets support
+
+$_l->extends = empty($template->_extended) && isset($_control) && $_control instanceof Nette\Application\UI\Presenter ? $_control->findLayoutTemplateFile() : NULL; $template->_extended = $_extended = TRUE;
+
+
+if ($_l->extends) {
+	ob_start();
+
+} elseif (!empty($_control->snippetMode)) {
+	return Nette\Latte\Macros\UIMacros::renderSnippets($_control, $_l, get_defined_vars());
+}
+
+//
+// main template
+//
+?>
+
+<?php if ($_l->extends) { ob_end_clean(); return Nette\Latte\Macros\CoreMacros::includeTemplate($_l->extends, get_defined_vars(), $template)->render(); }
+call_user_func(reset($_l->blocks['content']), $_l, get_defined_vars()) ; 

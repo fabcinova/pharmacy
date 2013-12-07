@@ -15,6 +15,8 @@ class ErrorPresenter extends BasePresenter
 	 */
 	public function renderDefault($exception)
 	{
+            parent::renderDefault();
+            
 		if ($this->isAjax()) { // AJAX request? Just note this error in payload.
 			$this->payload->error = TRUE;
 			$this->terminate();
