@@ -11,8 +11,8 @@ class Prispevek extends Model{
     public $lek;
     public $pojistovna;
     public $vyse_prispevku;
-    public $platnost_od;
-    public $platnost_do;
+    private $platnost_od;
+    private $platnost_do;
 
     public function __construct($id)
     {
@@ -31,10 +31,43 @@ class Prispevek extends Model{
         return dibi::getInsertId();
     }
     
+    public function getLek()
+    {
+        return new Lek($this->lek);
+    }
+    
+    public function getPojistovna()
+    {
+        return new Pojistovna($this->pojistovna);
+    }
+
+    public function getPlatnost_od()
+    {
+        return $this->platnost_od;
+    }
+    
+    public function getPlatnost_do()
+    {
+        return $this->platnost_do;
+    }
+    
+    public function setPlatnost_od($string)
+    {
+        $this->platnost_od = date_create($string);
+        dump($this->platnost_od);
+        dump($string);
+//        die("umierame");
+    }
+    
+    public function setPlatnost_do($string)
+    {
+        $this->platnost_do = date_create($string);
+    }
+    
     public function save()
     {
         $query = "UPDATE `prispevky` SET lek=%i, pojistovna=%i, vyse_prispevku=%i, platnost_od=%d, platnost_do=%d WHERE id=%i;";
-        dibi::query($query, $this->lek, $this->pojistovna, $this->vyse_prispevku, $this->platnost_od, $this->platnost_do, $this->ID);
+        dibi::query($query, $this->lek, $this->pojistovna, $this->vyse_prispevku, $this->platnost_od, $this->platnost_do, $this->id);
     }
     
     public static function loadAll()

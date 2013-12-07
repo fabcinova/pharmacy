@@ -1,10 +1,10 @@
-<?php //netteCache[01]000374a:2:{s:4:"time";s:21:"0.56915700 1386005035";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:52:"D:\git_projects\lekarna\app\templates\Lek\edit.latte";i:2;i:1386005023;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000374a:2:{s:4:"time";s:21:"0.87697400 1386428784";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:52:"D:\git_projects\lekarna\app\templates\Lek\edit.latte";i:2;i:1386115901;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: D:\git_projects\lekarna\app\templates\Lek\edit.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'k3ybnwcyhh')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'h9it14l9j4')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 

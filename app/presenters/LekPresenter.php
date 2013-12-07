@@ -111,6 +111,7 @@ class LekPresenter extends BasePresenter {
         catch (Exception $ex)
         {
             $this->flashMessage("Neaktualizovano.", "error");
+            $this->redirect("Lek:edit", array("ID" => $this->id));
         }
         $this->flashMessage("Aktualizovano.", "info");
         $this->redirect("Lek:default");

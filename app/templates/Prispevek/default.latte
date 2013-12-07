@@ -16,11 +16,11 @@
     </tr>
         {foreach $prispevky as $Prispevek}
             <tr>
-                <td>{$Prispevek->lek}</td>
-                <td>{$Prispevek->pojistovna}</td>
-                <td>{$Prispevek->vyse_prispevku}</td>
-                <td>{$Prispevek->platnost_od}</td>
-                <td>{$Prispevek->platnost_do}</td>
+                <td>{$Prispevek->Lek->nazev}</td>
+                <td>{$Prispevek->Pojistovna->nazev}</td>
+                <td>{$Prispevek->vyse_prispevku} Kč</td>
+                <td>{$Prispevek->platnost_od|date:'%d.%m.%Y'}</td>
+                <td>{$Prispevek->platnost_do|date:'%d.%m.%Y'}</td>
                 <td><a n:href="Prispevek:edit $Prispevek->id">Upravit</a></td>
                 <td><a n:href="Prispevek:delete $Prispevek->id" onClick="return confirm('Opravdu smazat prispevek ?')" >Smazat</a></td>
             </tr> 

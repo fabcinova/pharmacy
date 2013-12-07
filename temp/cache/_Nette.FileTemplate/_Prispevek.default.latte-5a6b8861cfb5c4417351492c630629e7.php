@@ -1,10 +1,10 @@
-<?php //netteCache[01]000383a:2:{s:4:"time";s:21:"0.18486500 1386114869";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:61:"D:\git_projects\lekarna\app\templates\Prispevek\default.latte";i:2;i:1386114864;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000383a:2:{s:4:"time";s:21:"0.90795400 1386426266";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:61:"D:\git_projects\lekarna\app\templates\Prispevek\default.latte";i:2;i:1386426263;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: D:\git_projects\lekarna\app\templates\Prispevek\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'zvtj6adnra')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'di4t7iu7sn')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 
@@ -16,7 +16,10 @@ if (!empty($_control->snippetMode)) {
 //
 // main template
 //
-?>
+$iterations = 0; foreach ($flashes as $flash): ?>
+<div class="flash <?php echo htmlSpecialChars($flash->type) ?>"><?php echo Nette\Templating\Helpers::escapeHtml($flash->message, ENT_NOQUOTES) ?></div>
+<?php $iterations++; endforeach ?>
+
 <h1>Prispevky</h1>
 
 <a href="<?php echo htmlSpecialChars($_control->link("Prispevek:create")) ?>">Vložit nový</a>
@@ -31,11 +34,11 @@ if (!empty($_control->snippetMode)) {
     </tr>
 <?php $iterations = 0; foreach ($prispevky as $Prispevek): ?>
             <tr>
-                <td><?php echo Nette\Templating\Helpers::escapeHtml($Prispevek->lek, ENT_NOQUOTES) ?></td>
-                <td><?php echo Nette\Templating\Helpers::escapeHtml($Prispevek->pojistovna, ENT_NOQUOTES) ?></td>
-                <td><?php echo Nette\Templating\Helpers::escapeHtml($Prispevek->vyse_prispevku, ENT_NOQUOTES) ?></td>
-                <td><?php echo Nette\Templating\Helpers::escapeHtml($Prispevek->platnost_od, ENT_NOQUOTES) ?></td>
-                <td><?php echo Nette\Templating\Helpers::escapeHtml($Prispevek->platnost_do, ENT_NOQUOTES) ?></td>
+                <td><?php echo Nette\Templating\Helpers::escapeHtml($Prispevek->Lek->nazev, ENT_NOQUOTES) ?></td>
+                <td><?php echo Nette\Templating\Helpers::escapeHtml($Prispevek->Pojistovna->nazev, ENT_NOQUOTES) ?></td>
+                <td><?php echo Nette\Templating\Helpers::escapeHtml($Prispevek->vyse_prispevku, ENT_NOQUOTES) ?> Kč</td>
+                <td><?php echo Nette\Templating\Helpers::escapeHtml($template->date($Prispevek->platnost_od, '%d.%m.%Y'), ENT_NOQUOTES) ?></td>
+                <td><?php echo Nette\Templating\Helpers::escapeHtml($template->date($Prispevek->platnost_do, '%d.%m.%Y'), ENT_NOQUOTES) ?></td>
                 <td><a href="<?php echo htmlSpecialChars($_control->link("Prispevek:edit", array($Prispevek->id))) ?>
 ">Upravit</a></td>
                 <td><a onClick="return confirm('Opravdu smazat prispevek ?')"  href="<?php echo htmlSpecialChars($_control->link("Prispevek:delete", array($Prispevek->id))) ?>

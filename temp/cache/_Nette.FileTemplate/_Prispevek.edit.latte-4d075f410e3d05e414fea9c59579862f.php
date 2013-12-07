@@ -1,10 +1,10 @@
-<?php //netteCache[01]000382a:2:{s:4:"time";s:21:"0.56575200 1386422871";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:60:"D:\git_projects\lekarna\app\templates\Prispevek\create.latte";i:2;i:1386422863;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000380a:2:{s:4:"time";s:21:"0.87585500 1386426579";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:58:"D:\git_projects\lekarna\app\templates\Prispevek\edit.latte";i:2;i:1386426562;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
-// source file: D:\git_projects\lekarna\app\templates\Prispevek\create.latte
+// source file: D:\git_projects\lekarna\app\templates\Prispevek\edit.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'demekwcgzx')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'ywcec9chwn')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 
@@ -20,7 +20,7 @@ $iterations = 0; foreach ($flashes as $flash): ?>
 <div class="flash <?php echo htmlSpecialChars($flash->type) ?>"><?php echo Nette\Templating\Helpers::escapeHtml($flash->message, ENT_NOQUOTES) ?></div>
 <?php $iterations++; endforeach ?>
 
-<?php Nette\Latte\Macros\FormMacros::renderFormBegin($form = $_form = (is_object("createForm") ? "createForm" : $_control["createForm"]), array()) ?>
+<?php Nette\Latte\Macros\FormMacros::renderFormBegin($form = $_form = (is_object("editForm") ? "editForm" : $_control["editForm"]), array()) ?>
 <table>
 <tr class="required">
     <th><?php $_input = is_object("lek") ? "lek" : $_form["lek"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ?></th>
