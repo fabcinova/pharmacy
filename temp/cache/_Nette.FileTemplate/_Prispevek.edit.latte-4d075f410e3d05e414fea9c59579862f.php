@@ -1,10 +1,10 @@
-<?php //netteCache[01]000380a:2:{s:4:"time";s:21:"0.87585500 1386426579";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:58:"D:\git_projects\lekarna\app\templates\Prispevek\edit.latte";i:2;i:1386426562;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000380a:2:{s:4:"time";s:21:"0.20089600 1386436546";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:58:"D:\git_projects\lekarna\app\templates\Prispevek\edit.latte";i:2;i:1386436462;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: D:\git_projects\lekarna\app\templates\Prispevek\edit.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'ywcec9chwn')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'fpk08vh3iw')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 
@@ -37,12 +37,12 @@ $iterations = 0; foreach ($flashes as $flash): ?>
 <tr>
     <th><?php $_input = is_object("platnost_od") ? "platnost_od" : $_form["platnost_od"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ?></th>
     <td><?php $_input = (is_object("platnost_od") ? "platnost_od" : $_form["platnost_od"]); echo $_input->getControl()->addAttributes(array()) ?></td>
-    <td>Formát napr. 2014-01-01</td>
+    <td>Formát napr. 1.1.2014</td>
 </tr>
 <tr>
     <th><?php $_input = is_object("platnost_do") ? "platnost_do" : $_form["platnost_do"]; if ($_label = $_input->getLabel()) echo $_label->addAttributes(array()) ?></th>
     <td><?php $_input = (is_object("platnost_do") ? "platnost_do" : $_form["platnost_do"]); echo $_input->getControl()->addAttributes(array()) ?></td>
-    <td>Formát napr. 2014-12-31</td>
+    <td>Formát napr. 31.12.2014</td>
 </tr>
 <tr>
     <th>&nbsp;</th>

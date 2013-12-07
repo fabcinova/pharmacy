@@ -13,7 +13,6 @@ class PrispevekPresenter extends BasePresenter {
     public function actionDefault()
     {
         $this->template->prispevky = Prispevek::loadAll();
-//        dump($this->template);
     }
     
     public function actionCreate()
@@ -83,8 +82,8 @@ class PrispevekPresenter extends BasePresenter {
         $form->getComponent("lek")->setValue($prispevek->lek);
         $form->getComponent("pojistovna")->setValue($prispevek->pojistovna);
         $form->getComponent("vyse_prispevku")->setValue($prispevek->vyse_prispevku);
-        $form->getComponent("platnost_od")->setValue($prispevek->platnost_od->format("d.m.Y"));
-        $form->getComponent("platnost_do")->setValue($prispevek->platnost_do->format("d.m.Y"));
+        $form->getComponent("platnost_od")->setValue($prispevek->platnost_od->format("j.n.Y"));
+        $form->getComponent("platnost_do")->setValue($prispevek->platnost_do->format("j.n.Y"));
     
         return $form;
     }
@@ -122,22 +121,17 @@ class PrispevekPresenter extends BasePresenter {
         {
             Prispevek::create($values->lek, $values->pojistovna, $values->vyse_prispevku, $values->platnost_od, $values->platnost_do);
             $this->flashMessage("Uloženo.", "info");
-//            $this->redirect("Prispevek:default");
         }
         catch(Exception $ex)
         {
-            throw $ex;
             $this->flashMessage("Chyba: Příspěvek nebyl vložen!", "error");
         }
-        
-//        $this->flashMessage("Uloženo.", "info");
         $this->redirect("Prispevek:default");
     }
     
     public function edit(Form $form)
     {
         $values = $form->getValues();
-        dump($values);
         try
         {
             $prispevek = new Prispevek($values->id);
@@ -150,12 +144,10 @@ class PrispevekPresenter extends BasePresenter {
         
         try
         {
-            foreach ($prispevek as $key => $value)
+            foreach ($values as $key => $value)
             {
                 if ($key != "id")
                 {
-                    dump($key);
-                    dump($values->$key);
                     $prispevek->$key = $values->$key;
                 }
             }

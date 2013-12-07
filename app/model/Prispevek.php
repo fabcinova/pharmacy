@@ -54,9 +54,6 @@ class Prispevek extends Model{
     public function setPlatnost_od($string)
     {
         $this->platnost_od = date_create($string);
-        dump($this->platnost_od);
-        dump($string);
-//        die("umierame");
     }
     
     public function setPlatnost_do($string)

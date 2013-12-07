@@ -19,16 +19,6 @@ CREATE TABLE users (
  */
 class Authenticator extends Nette\Object implements Security\IAuthenticator
 {
-	/** @var Nette\Database\Connection */
-	private $database;
-
-
-	public function __construct(Nette\Database\Connection $database)
-	{
-		$this->database = $database;
-	}
-
-
 	/**
 	 * Performs an authentication.
 	 * @return Nette\Security\Identity
@@ -63,7 +53,7 @@ class Authenticator extends Nette\Object implements Security\IAuthenticator
 		if ($password === Strings::upper($password)) { // perhaps caps lock is on
 			$password = Strings::lower($password);
 		}
-		return crypt($password, $salt ?: '$2a$07$' . Strings::random(22));
+		return crypt($password, $salt ?: '$2a$0gf7$' . Strings::random(22));
 	}
 
 }

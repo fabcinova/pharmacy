@@ -15,10 +15,9 @@ class Helper {
     public static function validateDate($string)
     {
 //        $date = new DateTime($string);
-        $date = date_create($string);
-//        dump($date->format("Y"));
+        $date = date_create_from_format("d.m.Y", $string);
         
-        if ($string && $date->format("Y") > 1970)
+        if ($date && $string && $date->format("Y") > 1970)
         {
             return true;
         }
