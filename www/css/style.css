@@ -9,7 +9,7 @@ a { color: #006aeb; padding: 3px 1px; }
 
 a:hover, a:active, a:focus { background-color: #006aeb; text-decoration: none; color: white; }
 
-#banner { border-radius: 12px 12px 0 0; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAB5CAMAAADPursXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGBQTFRFD1CRDkqFDTlmDkF1D06NDT1tDTNZDk2KEFWaDTZgDkiCDTtpDT5wDkZ/DTBVEFacEFOWD1KUDTRcDTFWDkV9DkR7DkN4DkByDTVeDC9TDThjDTxrDkeADkuIDTRbDC9SbsUaggAAAEdJREFUeNqkwYURgAAQA7DH3d3335LSKyxAYpf9vWCpnYbf01qcOdFVXc14w4BznNTjkQfsscAdU3b4wIh9fDVYc4zV8xZgAAYaCMI6vPgLAAAAAElFTkSuQmCC); }
+#banner { border-radius: 120px 120px 0 0; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAB5CAMAAADPursXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGBQTFRFD1CRDkqFDTlmDkF1D06NDT1tDTNZDk2KEFWaDTZgDkiCDTtpDT5wDkZ/DTBVEFacEFOWD1KUDTRcDTFWDkV9DkR7DkN4DkByDTVeDC9TDThjDTxrDkeADkuIDTRbDC9SbsUaggAAAEdJREFUeNqkwYURgAAQA7DH3d3335LSKyxAYpf9vWCpnYbf01qcOdFVXc14w4BznNTjkQfsscAdU3b4wIh9fDVYc4zV8xZgAAYaCMI6vPgLAAAAAElFTkSuQmCC); }
 #banner h1 { color: white; font-size: 50px; line-height: 121px; margin: 0; padding-left: 40px; background: url(http://upload.wikimedia.org/wikipedia/commons/0/05/Green_Cross.png) no-repeat 95%; text-shadow: 1px 1px 0 rgba(0, 0, 0, .9); }
 
 #content { background: white; border: 1px solid #eff4f7; border-radius: 0 0 12px 12px; padding: 10px 40px; }
@@ -47,3 +47,60 @@ footer { font-size: 70%; padding: 1em 0; color: gray; }
 .jush-clr { color: #007800; }
 .jush a { color: inherit; background: transparent; }
 .jush-latte { color: #D59401; font-weight: bold }
+
+
+#menu {
+      background: #742525;
+      float: left;
+      width: 100% !important;   
+
+      }
+      
+#menu ul {
+         height: inherit;
+	       clear: left;
+	       float: right;
+	       list-style: none;
+         margin: 0;
+         padding: 0;
+         position: relative;
+         right: 50%;
+         text-align: center;
+          
+         }
+         
+#menu li {
+         display: block;
+	       float: left;
+      	 list-style: none;
+      	 margin: 0 25px;
+         padding: 0 20px 0 20px;
+      	 left: 50%;
+      	 position: relative;
+      	 text-align: center;
+         }
+         
+#menu li a{
+          color: #FFF;
+          text-decoration: none;
+          }
+          
+#menu li a:hover{
+                background-color: #742525 !important;
+                color: #FFFFFF;
+                }
+      
+#obsah{
+      
+      min-height: 500px;
+      width: 100%;
+      background: #9FD6FD;
+      overflow: auto;
+      clear: both;
+      }
+
+#footer{
+       clear: both;
+       width: 100%;
+       
+       }
