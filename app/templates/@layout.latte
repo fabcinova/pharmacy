@@ -25,7 +25,13 @@
 <body>
         <div id="banner">
                 <h1 n:block=title>{isset($nadpis) ? $nadpis : "Lékárna"}</h1>
-        </div>
+                <div id="user">
+                    {if $user->isLoggedIn()}
+                    <a n:href="Sign:out">Odhlásit {$user->id}</a><small> {implode(", ", $user->roles)} </small></div>
+                    {else}
+                    <a n:href="Sign:in">Přihlásit se</a></div>
+                    {/if}
+                </div>
 
         <div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
 
