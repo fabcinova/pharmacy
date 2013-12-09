@@ -1,21 +1,21 @@
-<?php //netteCache[01]000406a:2:{s:4:"time";s:21:"0.29065000 1386632676";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:84:"C:\Users\hp\Skola\3_tretak\IIS\projekt\pharmacy\app\templates\Homepage\default.latte";i:2;i:1386632675;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000406a:2:{s:4:"time";s:21:"0.53216200 1386632912";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:84:"C:\Users\hp\Skola\3_tretak\IIS\projekt\pharmacy\app\templates\Homepage\default.latte";i:2;i:1386632908;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\Users\hp\Skola\3_tretak\IIS\projekt\pharmacy\app\templates\Homepage\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'urrbgf5gze')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '3gwgeg25gq')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lbb2f47fbc03_content')) { function _lbb2f47fbc03_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb129f5267eb_content')) { function _lb129f5267eb_content($_l, $_args) { extract($_args)
 ?><link rel="stylesheet" media="screen,projection,tv" href="<?php echo htmlSpecialChars($basePath) ?>/css/style.css" />
 
 <body>
   <div id=hp_foto>
-  <IMG src="http://www.stud.fit.vutbr.cz/~xnetko00/lekarna.jpg" width=400px height=300px alt="Naše lékárna" />
+  <IMG src="<?php echo htmlSpecialChars($basePath) ?>/images/lekarna.jpg" width=400px height=300px alt="Naše lékárna" />
   </div>
   
   <div id=hp_text>
