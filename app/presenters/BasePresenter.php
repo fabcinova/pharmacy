@@ -18,7 +18,7 @@ abstract class BasePresenter extends \Nette\Application\UI\Presenter
         //TODO Autentifikace
         parent::__construct($context);
         $this->template->user = $this->getUser();
-        $this->template->nadpis = 'LÉKARNA U Barči a Domči';
+        $this->template->nadpis = 'LÉKÁRNA U Barči a Domči';
     }
     
     public function rights($role)

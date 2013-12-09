@@ -10,7 +10,7 @@ a { color: #006aeb; padding: 3px 1px; }
 a:hover, a:active, a:focus { background-color: #006aeb; text-decoration: none; color: white; }
 
 #banner { border-radius: 120px 120px 0 0; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAB5CAMAAADPursXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGBQTFRFD1CRDkqFDTlmDkF1D06NDT1tDTNZDk2KEFWaDTZgDkiCDTtpDT5wDkZ/DTBVEFacEFOWD1KUDTRcDTFWDkV9DkR7DkN4DkByDTVeDC9TDThjDTxrDkeADkuIDTRbDC9SbsUaggAAAEdJREFUeNqkwYURgAAQA7DH3d3335LSKyxAYpf9vWCpnYbf01qcOdFVXc14w4BznNTjkQfsscAdU3b4wIh9fDVYc4zV8xZgAAYaCMI6vPgLAAAAAElFTkSuQmCC); }
-#banner h1 { color: white; font-size: 50px; line-height: 121px; margin: 0; padding-left: 40px; background: url(http://upload.wikimedia.org/wikipedia/commons/0/05/Green_Cross.png) no-repeat 95%; text-shadow: 1px 1px 0 rgba(0, 0, 0, .9); }
+#banner h1 { color: white; font-size: 50px; line-height: 121px; margin: 0; padding: 0 0 0 12%; background: url(http://upload.wikimedia.org/wikipedia/commons/0/05/Green_Cross.png) no-repeat 85%; text-shadow: 1px 1px 0 rgba(0, 0, 0, .9); }
 
 #content { background: white; border: 1px solid #eff4f7; border-radius: 0 0 12px 12px; padding: 10px 40px; }
 #content > h2 { font-size: 130%; color: #666; clear: both; padding: 1.2em 0; margin: 0; }
@@ -104,3 +104,7 @@ footer { font-size: 70%; padding: 1em 0; color: gray; }
        width: 100%;
        
        }
+       
+#hp_foto{
+        
+        }
