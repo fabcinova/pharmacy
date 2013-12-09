@@ -106,5 +106,9 @@ footer { font-size: 70%; padding: 1em 0; color: gray; }
        }
        
 #hp_foto{
+        padding: 20px 25%;
+        }
         
+#hp_text{
+        font-size: medium;
         }
