@@ -73,14 +73,14 @@ class ExportPresenter extends BasePresenter
         
         try{
             $query = "SELECT *
-            FROM nakupy
-            WHERE datum>=%d AND datum<=%d";
+            FROM prispevky
+            WHERE pojistovna=%i AND platnost_od>=%d AND platnost_do<=%d";
             
-            $result = dibi::query($query, $values->od, $values->do);
+            $result = dibi::query($query, $values->pojistovna, date_create($values->od), date_create($values->do));
             
             foreach ($result as $row)
             {
-               $array[] = new Nakup($row->id);
+               $array[] = new Prispevek ($row->id); 
             }
             
             
@@ -91,9 +91,6 @@ class ExportPresenter extends BasePresenter
             $fh = fopen($myFile, 'w') or die("can't open file");
             fwrite($fh, $string);
             fclose($fh);
-            
-            
-            
             
                         
         }

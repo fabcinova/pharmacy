@@ -1,14 +1,59 @@
 array (
   0 => 
-  Nakup::__set_state(array(
-     'id' => 13,
-     'datum' => 
-    DibiDateTime::__set_state(array(
-       'date' => '2013-12-10 00:00:00',
+  Prispevek::__set_state(array(
+     'id' => 2,
+     'lek' => 5,
+     'pojistovna' => 201,
+     'vyse_prispevku' => 30,
+     'platnost_od' => 
+    DateTime::__set_state(array(
+       'date' => '2013-01-01 00:00:00',
        'timezone_type' => 3,
        'timezone' => 'Europe/Prague',
     )),
-     'pobocka' => 5,
+     'platnost_do' => 
+    DateTime::__set_state(array(
+       'date' => '2013-12-31 00:00:00',
+       'timezone_type' => 3,
+       'timezone' => 'Europe/Prague',
+    )),
+  )),
+  1 => 
+  Prispevek::__set_state(array(
+     'id' => 19,
      'lek' => 1,
+     'pojistovna' => 201,
+     'vyse_prispevku' => 45,
+     'platnost_od' => 
+    DateTime::__set_state(array(
+       'date' => '1999-01-01 00:00:00',
+       'timezone_type' => 3,
+       'timezone' => 'Europe/Prague',
+    )),
+     'platnost_do' => 
+    DateTime::__set_state(array(
+       'date' => '2012-03-22 00:00:00',
+       'timezone_type' => 3,
+       'timezone' => 'Europe/Prague',
+    )),
+  )),
+  2 => 
+  Prispevek::__set_state(array(
+     'id' => 20,
+     'lek' => 1,
+     'pojistovna' => 201,
+     'vyse_prispevku' => 55,
+     'platnost_od' => 
+    DateTime::__set_state(array(
+       'date' => '2013-01-01 00:00:00',
+       'timezone_type' => 3,
+       'timezone' => 'Europe/Prague',
+    )),
+     'platnost_do' => 
+    DateTime::__set_state(array(
+       'date' => '2013-01-02 00:00:00',
+       'timezone_type' => 3,
+       'timezone' => 'Europe/Prague',
+    )),
   )),
 )

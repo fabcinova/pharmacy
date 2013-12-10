@@ -94,11 +94,12 @@ class NakupPresenter extends BasePresenter {
                     $pob = new Pobocka ($values->pobocka);
                     $pob->removeOneFromNakup($values->lek);
                     Nakup::create($values->datum, $values->pobocka, $values->lek);
+                    
                 
                 $this->flashMessage("Uloženo.", "info");
             }
             else
-            {
+            {   
                 $this->flashMessage("Nedostatek zboží.", "error");
             }
         }
