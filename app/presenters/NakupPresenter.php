@@ -89,11 +89,23 @@ class NakupPresenter extends BasePresenter {
         
         try
         {
-            Nakup::create($values->datum, $values->pobocka, $values->lek);
-            $this->flashMessage("Uloženo.", "info");
+            if (Lek::getMnozstvi($values->lek, $values->pobocka) > 0)
+            {
+                dibi::begin();
+                $pob = new Pobocka ($values->pobocka);
+                $pob->removeOneFromNakup();
+                Nakup::create($values->datum, $values->pobocka, $values->lek);
+                dibi::commit();
+                $this->flashMessage("Uloženo.", "info");
+            }
+            else
+            {
+                $this->flashMessage("Nedostatek zboží.", "error");
+            }
         }
         catch(Exception $ex)
         {
+            dibi::rollback();
             $this->flashMessage("Chyba: Nákup nebyl vložen!", "error");
         }
         $this->redirect("Nakup:default");

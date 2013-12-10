@@ -58,14 +58,9 @@ class Pobocka extends Model{
         return new Adresa($this->adresa);
     }
     
-    private function removeOneFromNakup()
+    public function removeOneFromNakup()
     {
         $update_sklad = "UPDATE `sklady` SET mnozstvi=mnozstvi-1 WHERE pobocka=%i AND lek=%i";
         dibi::query($update_sklad, $pobocka, $lek);
-    }
-    
-    public function nakup()
-    {
-        
     }
 }
