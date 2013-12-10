@@ -23,6 +23,11 @@ class Nakup extends Model {
             VALUES (%d, %i, %i);";
         dibi::query($query, $datum, $pobocka, $lek);
         
+        if( dibi::affectedRows() != 1)
+        {
+            throw new Exception("Nepodarilo sa vlozit nakup.");
+        }
+        
         return dibi::getInsertId();
     }
     
