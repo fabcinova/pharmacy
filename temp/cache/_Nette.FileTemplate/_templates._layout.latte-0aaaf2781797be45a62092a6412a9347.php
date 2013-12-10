@@ -1,23 +1,23 @@
-<?php //netteCache[01]000397a:2:{s:4:"time";s:21:"0.68379500 1386649812";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:75:"C:\Users\hp\Skola\3_tretak\IIS\projekt\pharmacy\app\templates\@layout.latte";i:2;i:1386649788;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000397a:2:{s:4:"time";s:21:"0.44287800 1386682271";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:75:"C:\Users\hp\Skola\3_tretak\IIS\projekt\pharmacy\app\templates\@layout.latte";i:2;i:1386682267;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\Users\hp\Skola\3_tretak\IIS\projekt\pharmacy\app\templates\@layout.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'jrdxxmda58')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'rny6hx2m9s')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block head
 //
-if (!function_exists($_l->blocks['head'][] = '_lb3e784276fe_head')) { function _lb3e784276fe_head($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['head'][] = '_lb19917761a3_head')) { function _lb19917761a3_head($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbe565c90d84_title')) { function _lbe565c90d84_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lb479a636088_title')) { function _lb479a636088_title($_l, $_args) { extract($_args)
 ?>                <h1><?php echo Nette\Templating\Helpers::escapeHtml(isset($nadpis) ? $nadpis : "Lékárna", ENT_NOQUOTES) ?></h1>
 <?php
 }}
@@ -25,7 +25,7 @@ if (!function_exists($_l->blocks['title'][] = '_lbe565c90d84_title')) { function
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lbf2a6e8ec80_scripts')) { function _lbf2a6e8ec80_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lb25ec4d6bf0_scripts')) { function _lb25ec4d6bf0_scripts($_l, $_args) { extract($_args)
 ?>	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/jquery.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/netteForms.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/main.js"></script>
@@ -60,7 +60,10 @@ if ($_l->extends) {
 <?php if (isset($robots)): ?>	<meta name="robots" content="<?php echo htmlSpecialChars($robots) ?>" />
 <?php endif ?>
 
-	<title><?php echo Nette\Templating\Helpers::escapeHtml(isset($nadpis) ? $nadpis : "Lékárna", ENT_NOQUOTES) ?></title>
+  
+	
+
+  <title><?php echo Nette\Templating\Helpers::escapeHtml(isset($nadpis) ? $nadpis : "Lékárna", ENT_NOQUOTES) ?></title>
 
 	<link rel="stylesheet" media="screen,projection,tv" href="<?php echo htmlSpecialChars($basePath) ?>/css/screen.css" />
 	<link rel="stylesheet" media="screen,projection,tv" href="<?php echo htmlSpecialChars($basePath) ?>/css/style.css" />
@@ -71,20 +74,22 @@ call_user_func(reset($_l->blocks['head']), $_l, get_defined_vars())  ?>
 
 </head>
 
-<body>
+<body>   
         <div id="banner">
 <?php call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())  ?>
+                
                 <div id="user" align=right>
                 
 <?php if ($user->isLoggedIn()): ?>
                     <a class="signbutton" href="<?php echo htmlSpecialChars($_control->link("Sign:out")) ?>
-">Odhlásit <?php echo Nette\Templating\Helpers::escapeHtml($user->id, ENT_NOQUOTES) ?></a></div>
+">Odhlásit <?php echo Nette\Templating\Helpers::escapeHtml($user->id, ENT_NOQUOTES) ?></a></span>
 <?php else: ?>
                     <a class="signbutton" href="<?php echo htmlSpecialChars($_control->link("Sign:in")) ?>
-">Přihlásit se</a></div
+">Přihlásit se</a></span>
 <?php endif ?>
                 </div>   
         </div>
+    
 <?php $iterations = 0; foreach ($flashes as $flash): ?>        <div class="flash <?php echo htmlSpecialChars($flash->type) ?>
 "><?php echo Nette\Templating\Helpers::escapeHtml($flash->message, ENT_NOQUOTES) ?></div>
 <?php $iterations++; endforeach ?>
@@ -93,12 +98,13 @@ call_user_func(reset($_l->blocks['head']), $_l, get_defined_vars())  ?>
             
             <div id="menu">
                 <ul class="menu-list">
+                  <li> <a href="index.php">Lékárna</a></li>
                   <li> <a href="<?php echo htmlSpecialChars($_control->link("Lek:default")) ?>
 ">Seznam léků</a></li> 
                   <li> <a href="<?php echo htmlSpecialChars($_control->link("Pobocka:default")) ?>
 ">Seznam poboček</a></li>       
                   <li> <a href="<?php echo htmlSpecialChars($_control->link("Prispevek:default")) ?>
-">Importovat příspěvky</a></li>  
+">Příspěvky</a></li>  
                 </ul>           
             </div>
             
