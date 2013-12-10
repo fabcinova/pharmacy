@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Počítač: localhost
--- Vygenerováno: Úte 10. pro 2013, 21:30
+-- Vygenerováno: Úte 10. pro 2013, 13:48
 -- Verze serveru: 5.6.12-log
 -- Verze PHP: 5.4.16
 
@@ -17,9 +17,9 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Databáze: `xfabci00`
+-- Databáze: `pharmacy`
 --
-CREATE DATABASE IF NOT EXISTS `xfabci00` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+CREATE DATABASE IF NOT EXISTS `xfabci00` DEFAULT CHARACTER SET utf8 COLLATE utf8_czech_ci;
 USE `xfabci00`;
 
 -- --------------------------------------------------------
@@ -28,7 +28,6 @@ USE `xfabci00`;
 -- Struktura tabulky `adresy`
 --
 
-DROP TABLE IF EXISTS `adresy`;
 CREATE TABLE IF NOT EXISTS `adresy` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ulice` varchar(50) COLLATE utf8_czech_ci NOT NULL,
@@ -65,7 +64,6 @@ INSERT INTO `adresy` (`id`, `ulice`, `cislo_popisne`, `psc`, `mesto`) VALUES
 -- Struktura tabulky `ceny`
 --
 
-DROP TABLE IF EXISTS `ceny`;
 CREATE TABLE IF NOT EXISTS `ceny` (
   `dodavatel` int(11) NOT NULL,
   `lek` int(11) NOT NULL,
@@ -86,7 +84,9 @@ INSERT INTO `ceny` (`dodavatel`, `lek`, `cena`) VALUES
 (1, 4, 350),
 (3, 4, 320),
 (1, 5, 84),
-(2, 5, 90);
+(2, 5, 90),
+(1, 6, 723),
+(3, 6, 680);
 
 -- --------------------------------------------------------
 
@@ -94,7 +94,6 @@ INSERT INTO `ceny` (`dodavatel`, `lek`, `cena`) VALUES
 -- Struktura tabulky `dodavatele`
 --
 
-DROP TABLE IF EXISTS `dodavatele`;
 CREATE TABLE IF NOT EXISTS `dodavatele` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nazev` varchar(50) COLLATE utf8_czech_ci NOT NULL,
@@ -118,14 +117,13 @@ INSERT INTO `dodavatele` (`id`, `nazev`, `adresa`) VALUES
 -- Struktura tabulky `leky`
 --
 
-DROP TABLE IF EXISTS `leky`;
 CREATE TABLE IF NOT EXISTS `leky` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `nazev` varchar(50) COLLATE utf8_czech_ci NOT NULL,
   `ucinna_latka` varchar(50) COLLATE utf8_czech_ci NOT NULL,
   `predpis` tinyint(1) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci AUTO_INCREMENT=18 ;
 
 --
 -- Vypisuji data pro tabulku `leky`
@@ -137,7 +135,11 @@ INSERT INTO `leky` (`ID`, `nazev`, `ucinna_latka`, `predpis`) VALUES
 (3, 'Xanax', 'antimentalium', 1),
 (4, 'Minerva', 'mcgonagalium', 1),
 (5, 'Bioparox', 'tomasium', 1),
-(20, 'novylek', 'lecidlo', 1);
+(6, 'Rohypnol', 'znasilnovalium', 1),
+(7, 'NovyLek', 'lalala', 0),
+(11, 'Novy Lek Ktery Je Supr', 'latka ktera ucinkuje', 1),
+(12, 'Liecik', 'juchuchu', 0),
+(17, 'Ibalgin', 'ibuprofenum', 0);
 
 -- --------------------------------------------------------
 
@@ -145,23 +147,15 @@ INSERT INTO `leky` (`ID`, `nazev`, `ucinna_latka`, `predpis`) VALUES
 -- Struktura tabulky `nakupy`
 --
 
-DROP TABLE IF EXISTS `nakupy`;
 CREATE TABLE IF NOT EXISTS `nakupy` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `datum` date NOT NULL,
   `pobocka` int(11) NOT NULL,
   `lek` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `pobocka` (`pobocka`),
-  KEY `lek` (`lek`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci AUTO_INCREMENT=28 ;
-
---
--- Vypisuji data pro tabulku `nakupy`
---
-
-INSERT INTO `nakupy` (`id`, `datum`, `pobocka`, `lek`) VALUES
-(26, '2013-12-10', 1, 1);
+  KEY `lek` (`lek`),
+  KEY `pobocka` (`pobocka`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -169,7 +163,6 @@ INSERT INTO `nakupy` (`id`, `datum`, `pobocka`, `lek`) VALUES
 -- Struktura tabulky `pobocky`
 --
 
-DROP TABLE IF EXISTS `pobocky`;
 CREATE TABLE IF NOT EXISTS `pobocky` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `adresa` int(11) NOT NULL,
@@ -194,7 +187,6 @@ INSERT INTO `pobocky` (`id`, `adresa`) VALUES
 -- Struktura tabulky `pojistovny`
 --
 
-DROP TABLE IF EXISTS `pojistovny`;
 CREATE TABLE IF NOT EXISTS `pojistovny` (
   `kod` int(3) NOT NULL,
   `nazev` varchar(50) COLLATE utf8_czech_ci NOT NULL,
@@ -221,7 +213,6 @@ INSERT INTO `pojistovny` (`kod`, `nazev`, `adresa`) VALUES
 -- Struktura tabulky `prispevky`
 --
 
-DROP TABLE IF EXISTS `prispevky`;
 CREATE TABLE IF NOT EXISTS `prispevky` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `lek` int(11) NOT NULL,
@@ -232,7 +223,7 @@ CREATE TABLE IF NOT EXISTS `prispevky` (
   PRIMARY KEY (`id`),
   KEY `lek` (`lek`),
   KEY `pojistovna` (`pojistovna`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci AUTO_INCREMENT=19 ;
 
 --
 -- Vypisuji data pro tabulku `prispevky`
@@ -245,12 +236,11 @@ INSERT INTO `prispevky` (`id`, `lek`, `pojistovna`, `vyse_prispevku`, `platnost_
 (4, 3, 201, 150, '2014-01-20', '2014-05-31'),
 (5, 1, 213, 5, '2014-01-20', '2014-12-31'),
 (6, 4, 207, 96, '2013-09-01', '2014-04-30'),
+(7, 6, 207, 50, '2013-12-01', '2013-12-11'),
 (8, 1, 201, 555, '2014-01-01', '2014-08-08'),
 (9, 1, 209, 28, '2014-01-01', '2014-12-31'),
 (14, 3, 209, 34, '2013-02-01', '2014-01-01'),
-(18, 1, 201, 18, '2014-12-31', '2014-12-31'),
-(19, 1, 201, 45, '1999-01-01', '2012-03-22'),
-(20, 1, 201, 55, '2013-01-01', '2013-01-02');
+(18, 1, 201, 18, '2014-12-31', '2014-12-31');
 
 -- --------------------------------------------------------
 
@@ -258,7 +248,6 @@ INSERT INTO `prispevky` (`id`, `lek`, `pojistovna`, `vyse_prispevku`, `platnost_
 -- Struktura tabulky `sklady`
 --
 
-DROP TABLE IF EXISTS `sklady`;
 CREATE TABLE IF NOT EXISTS `sklady` (
   `pobocka` int(11) NOT NULL,
   `lek` int(11) NOT NULL,
@@ -273,30 +262,36 @@ CREATE TABLE IF NOT EXISTS `sklady` (
 --
 
 INSERT INTO `sklady` (`pobocka`, `lek`, `cena`, `mnozstvi`) VALUES
-(1, 1, 40, 51),
+(1, 1, 40, 54),
 (2, 1, 45, 140),
-(3, 1, 40, 37),
+(3, 1, 40, 38),
 (4, 1, 31, 20),
-(5, 1, 35, 9),
-(1, 2, 60, 32),
+(5, 1, 35, 10),
+(1, 2, 60, 5),
 (2, 2, 65, 14),
-(3, 2, 60, 10),
-(4, 2, 51, 10),
+(3, 2, 60, 0),
+(4, 2, 51, 2),
 (5, 2, 55, 10),
-(1, 3, 60, 3),
+(1, 3, 60, 5),
 (2, 3, 65, 4),
-(3, 3, 60, 4),
-(4, 3, 51, 16),
-(5, 3, 55, 10),
-(1, 4, 360, 21),
-(2, 4, 379, 10),
-(3, 4, 360, 26),
-(4, 4, 337, 10),
-(5, 4, 337, 12),
-(1, 5, 160, 10),
+(3, 3, 60, 5),
+(4, 3, 51, 2),
+(5, 3, 55, 0),
+(1, 4, 360, 22),
+(2, 4, 379, 0),
+(3, 4, 360, 2),
+(4, 4, 337, 1),
+(5, 4, 337, 13),
+(1, 5, 160, 2),
 (2, 5, 179, 10),
-(3, 5, 160, 26),
-(4, 5, 137, 10);
+(3, 5, 160, 2),
+(4, 5, 137, 0),
+(5, 5, 137, 3),
+(1, 6, 960, 0),
+(2, 6, 979, 0),
+(3, 6, 960, 0),
+(4, 6, 937, 0),
+(5, 6, 937, 3);
 
 -- --------------------------------------------------------
 
@@ -304,23 +299,21 @@ INSERT INTO `sklady` (`pobocka`, `lek`, `cena`, `mnozstvi`) VALUES
 -- Struktura tabulky `users`
 --
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) COLLATE utf8_czech_ci NOT NULL,
   `password` char(60) COLLATE utf8_czech_ci NOT NULL,
   `role` varchar(20) COLLATE utf8_czech_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci AUTO_INCREMENT=2 ;
 
 --
 -- Vypisuji data pro tabulku `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`) VALUES
-(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'admin'),
-(2, 'lekarnik', '630a70eaac87e55995a4e06730eb24ead8cdacb0', 'lekarnik'),
-(3, 'user', '12dea96fec20593566ab75692c9949596833adc9', 'user');
+(1, 'admin', SHA1('admin'), 'admin'),
+(2, 'lekarnik', SHA1('lekarnik'), 'lekarnik');
 
 --
 -- Omezení pro exportované tabulky
