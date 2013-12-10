@@ -55,4 +55,17 @@ class Lek extends Model{
         $query = "DELETE FROM `leky` WHERE `ID` = %i;";
         dibi::query($query, $id);
     }
+    
+    public static function getMnozstvi($lek_id, $pobocka_id)
+    {
+        $query = "SELECT mnozstvi FROM sklady WHERE lek=%i AND pobocka=%i";
+        $row = dibi::query($query, $lek_id, $pobocka_id)->fetch();
+        
+        if (!$row)
+        {
+            return 0;
+        }
+        
+        return $row->mnozstvi;
+    }
 }

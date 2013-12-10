@@ -82,8 +82,6 @@ class ExportPresenter extends BasePresenter
             {
                $array[] = new Nakup($row->id);
             }
-            
-            dump($array);
                         
         }
         catch(Exception $ex)
