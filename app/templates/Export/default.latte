@@ -1,0 +1,32 @@
+{block #content}
+
+<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/style.css">
+
+
+<body>
+
+{form createForm}
+<table class="edit_tab">
+
+<tr class="required">
+    <th>Pojišťovna</th>
+    <td>{input pojistovna}</td>
+</tr>
+<tr>
+    <th>Od</th>
+    <td>{input od}</td>
+    <td class="edit">Formát např. 1.1.2014</td>
+</tr>
+<tr>
+    <th>Do</th>
+    <td>{input do}</td>
+    <td class="edit" >Formát např. 31.12.2014</td>
+</tr>
+<tr>
+    <th>&nbsp;</th>
+    <td>{input exportovat}</td>
+</tr>
+</table>
+{/form}
+
+</body>

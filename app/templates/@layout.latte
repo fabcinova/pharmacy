@@ -49,6 +49,11 @@
                   <li> <a n:href="Lek:default">Seznam prodávaných léků</a></li> 
                   <li> <a n:href="Pobocka:default">Adresy poboček</a></li>       
                   <li> <a n:href="Prispevek:default">Příspěvky</a></li>  
+                  
+                  {if ($user->isInRole("admin")) || ($user->isInRole("lekarnik"))}
+                    <li> <a n:href="Export:default">Výpis pro pojišťovnu</a></li> 
+                  {/if} 
+                  
                 </ul>           
             </div>
             
