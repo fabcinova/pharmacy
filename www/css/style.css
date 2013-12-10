@@ -146,6 +146,7 @@ table td
 .edit{
      background: #9FD6FD;
      border: none !important; 
+     color: black;
      }
 
 .tab{
@@ -169,7 +170,7 @@ table td
     
 .signbutton{
     background: #A9EAFF;
-    border: 2px solid #68B8DF;
+    border: 2px  #1E3672;
     border-radius: 1px;
     color: black;
     text-decoration: none;
@@ -182,3 +183,7 @@ table td
     background: #FFFFFF;
     color: black;
     }
+    
+.edit_tab{
+         padding: 55px ;
+         }
