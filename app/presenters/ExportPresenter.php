@@ -11,7 +11,7 @@ class ExportPresenter extends BasePresenter
     {
 
     }
-    
+                    
     public function actionEdit($ID)
     {
         $this->id = $ID;
@@ -82,6 +82,19 @@ class ExportPresenter extends BasePresenter
             {
                $array[] = new Nakup($row->id);
             }
+            
+            
+            $string = var_export($array, true);
+            
+            
+            $myFile = "Export.txt";
+            $fh = fopen($myFile, 'w') or die("can't open file");
+            fwrite($fh, $string);
+            fclose($fh);
+            
+            
+            
+            
                         
         }
         catch(Exception $ex)
