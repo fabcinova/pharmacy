@@ -106,6 +106,6 @@ class NakupPresenter extends BasePresenter {
         {
             $this->flashMessage("Chyba: Nákup nebyl vložen!", "error");
         }
-        $this->redirect("Nakup:default");
+        //$this->redirect("Nakup:default");
     }
 }

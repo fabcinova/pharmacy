@@ -1,16 +1,16 @@
-<?php //netteCache[01]000407a:2:{s:4:"time";s:21:"0.33761500 1386686515";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:85:"C:\Users\hp\Skola\3_tretak\IIS\projekt\pharmacy\app\templates\Prispevek\default.latte";i:2;i:1386686511;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000407a:2:{s:4:"time";s:21:"0.70503000 1386709740";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:85:"C:\Users\hp\Skola\3_tretak\IIS\projekt\pharmacy\app\templates\Prispevek\default.latte";i:2;i:1386704309;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\Users\hp\Skola\3_tretak\IIS\projekt\pharmacy\app\templates\Prispevek\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'upg9h1e8z3')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'hbtez2lpsn')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lbbccd123779_content')) { function _lbbccd123779_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbab259cc6b4_content')) { function _lbab259cc6b4_content($_l, $_args) { extract($_args)
 ?><body>
 
 <h1>Příspěvky</h1>
