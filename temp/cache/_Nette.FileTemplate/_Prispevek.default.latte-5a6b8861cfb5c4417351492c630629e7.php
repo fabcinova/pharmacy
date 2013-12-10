@@ -1,21 +1,22 @@
-<?php //netteCache[01]000383a:2:{s:4:"time";s:21:"0.02967400 1386437906";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:61:"D:\git_projects\lekarna\app\templates\Prispevek\default.latte";i:2;i:1386437895;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000383a:2:{s:4:"time";s:21:"0.86913900 1386694123";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:61:"D:\git_projects\lekarna\app\templates\Prispevek\default.latte";i:2;i:1386689813;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: D:\git_projects\lekarna\app\templates\Prispevek\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'a9reyoseue')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'e0lmq345pk')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb49fe8e4cb5_content')) { function _lb49fe8e4cb5_content($_l, $_args) { extract($_args)
-?><h1>Prispevky</h1>
+if (!function_exists($_l->blocks['content'][] = '_lbcebf8eefa4_content')) { function _lbcebf8eefa4_content($_l, $_args) { extract($_args)
+?><body>
 
-<a href="<?php echo htmlSpecialChars($_control->link("Prispevek:create")) ?>">Vložit nový</a>
+<h1>Příspěvky</h1>
 
-<table>
+
+<table align=center>
     <tr>
         <th>Lék</th>
         <th>Pojišťovna</th>
@@ -24,19 +25,33 @@ if (!function_exists($_l->blocks['content'][] = '_lb49fe8e4cb5_content')) { func
         <th>Platnost D0</th>
     </tr>
 <?php $iterations = 0; foreach ($prispevky as $Prispevek): ?>
-            <tr>
+            <tr align=center>
                 <td><?php echo Nette\Templating\Helpers::escapeHtml($Prispevek->Lek->nazev, ENT_NOQUOTES) ?></td>
                 <td><?php echo Nette\Templating\Helpers::escapeHtml($Prispevek->Pojistovna->nazev, ENT_NOQUOTES) ?></td>
                 <td><?php echo Nette\Templating\Helpers::escapeHtml($Prispevek->vyse_prispevku, ENT_NOQUOTES) ?> Kč</td>
                 <td><?php echo Nette\Templating\Helpers::escapeHtml($template->date($Prispevek->platnost_od, '%d.%m.%Y'), ENT_NOQUOTES) ?></td>
                 <td><?php echo Nette\Templating\Helpers::escapeHtml($template->date($Prispevek->platnost_do, '%d.%m.%Y'), ENT_NOQUOTES) ?></td>
-                <td><a href="<?php echo htmlSpecialChars($_control->link("Prispevek:edit", array($Prispevek->id))) ?>
-">Upravit</a></td>
-                <td><a onClick="return confirm('Opravdu smazat prispevek ?')"  href="<?php echo htmlSpecialChars($_control->link("Prispevek:delete", array($Prispevek->id))) ?>
-">Smazat</a></td>
+<?php if (($user->isInRole("admin")) || ($user->isInRole("lekarnik"))): ?>
+                  <td class="edit"><a class="button" href="<?php echo htmlSpecialChars($_control->link("Prispevek:edit", array($Prispevek->id))) ?>
+">Upravit</a> 
+                      <a class="button" onClick="return confirm('Opravdu smazat prispevek ?')"  href="<?php echo htmlSpecialChars($_control->link("Prispevek:delete", array($Prispevek->id))) ?>
+">Smazat</a>
+                  </td>
+<?php endif ?>
             </tr> 
 <?php $iterations++; endforeach ?>
-</table><?php
+</table>
+
+</br>
+
+<?php if (($user->isInRole("admin")) || ($user->isInRole("lekarnik"))): ?>
+  <div align=center>
+  <a class="button" href="<?php echo htmlSpecialChars($_control->link("Prispevek:create")) ?>
+">Vložit nový</a>
+  </div>
+<?php endif ?>
+
+</body><?php
 }}
 
 //

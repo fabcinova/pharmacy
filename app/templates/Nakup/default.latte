@@ -1,0 +1,37 @@
+{block #content}
+
+<body>
+
+<h1>Nákupy</h1>
+
+<table align=center>
+    <tr>
+        <th>Datum</th>
+        <th colspan="3">Pobočka</th>
+        <th>Lék</th>
+        <th class="edit"></th>
+    </tr>
+        {foreach $nakupy as $Nakup}
+            <tr align=center>
+                <td>{$Nakup->datum|date:'%d.%m.%Y'}</td>
+                <td>{$Nakup->Pobocka->ulice}</td>
+                <td>{$Nakup->Pobocka->cislo_popisne}</td>
+                <td>{$Nakup->Pobocka->mesto}</td>
+                <td>{$Nakup->Lek->nazev}</td>
+
+                <td class="edit">
+                    <a class="button" n:href="Nakup:edit $Nakup->id">Upravit</a>
+                    <a class="button" n:href="Nakup:delete $Nakup->id" onClick="return confirm('Opravdu smazat nákup ?')" >Smazat</a>
+                </td>
+            </tr> 
+        {/foreach}
+</table>
+
+</br>
+{if ($user->isInRole("admin")) || ($user->isInRole("lekarnik"))}
+<div align=center>
+<a class="button" n:href="Nakup:create">Vložit nový</a>
+</div>
+{/if}
+
+</body>

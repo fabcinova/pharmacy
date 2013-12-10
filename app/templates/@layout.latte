@@ -54,6 +54,9 @@
                     <li> <a n:href="Export:default">Výpis pro pojišťovnu</a></li> 
                   {/if} 
                   
+                  {if ($user->isInRole("lekarnik"))}
+                    <li> <a n:href="Nakup:default">Nákupy</a></li>
+                  {/if}
                 </ul>           
             </div>
             

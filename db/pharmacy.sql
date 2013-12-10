@@ -153,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `nakupy` (
   `pobocka` int(11) NOT NULL,
   `lek` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `lek` (`lek`),
+  KEY `lek` (`lek`),
   KEY `pobocka` (`pobocka`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci AUTO_INCREMENT=1 ;
 
@@ -312,7 +312,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`) VALUES
-(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'admin');
+(1, 'admin', SHA1('admin'), 'admin'),
+(2, 'lekarnik', SHA1('lekarnik'), 'lekarnik');
 
 --
 -- Omezení pro exportované tabulky
