@@ -20,17 +20,21 @@
                 <td>{$Prispevek->vyse_prispevku} Kč</td>
                 <td>{$Prispevek->platnost_od|date:'%d.%m.%Y'}</td>
                 <td>{$Prispevek->platnost_do|date:'%d.%m.%Y'}</td>
-                <td class="edit"><a class="button" n:href="Prispevek:edit $Prispevek->id">Upravit</a> 
-                    <a class="button" n:href="Prispevek:delete $Prispevek->id" onClick="return confirm('Opravdu smazat prispevek ?')" >Smazat</a>
-                </td>
+                {if ($user->isInRole("admin")) || ($user->isInRole("lekarnik"))}
+                  <td class="edit"><a class="button" n:href="Prispevek:edit $Prispevek->id">Upravit</a> 
+                      <a class="button" n:href="Prispevek:delete $Prispevek->id" onClick="return confirm('Opravdu smazat prispevek ?')" >Smazat</a>
+                  </td>
+                {/if}
             </tr> 
         {/foreach}
 </table>
 
 </br>
 
-<div align=center>
-<a class="button" n:href="Prispevek:create">Vložit nový</a>
-</div>
+{if ($user->isInRole("admin")) || ($user->isInRole("lekarnik"))}
+  <div align=center>
+  <a class="button" n:href="Prispevek:create">Vložit nový</a>
+  </div>
+{/if}
 
 </body>

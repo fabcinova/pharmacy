@@ -1,16 +1,16 @@
-<?php //netteCache[01]000407a:2:{s:4:"time";s:21:"0.68025000 1386668238";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:85:"C:\Users\hp\Skola\3_tretak\IIS\projekt\pharmacy\app\templates\Prispevek\default.latte";i:2;i:1386668219;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000407a:2:{s:4:"time";s:21:"0.33761500 1386686515";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:85:"C:\Users\hp\Skola\3_tretak\IIS\projekt\pharmacy\app\templates\Prispevek\default.latte";i:2;i:1386686511;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\Users\hp\Skola\3_tretak\IIS\projekt\pharmacy\app\templates\Prispevek\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'ztbt628u12')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'upg9h1e8z3')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb90b758e0d9_content')) { function _lb90b758e0d9_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lbbccd123779_content')) { function _lbbccd123779_content($_l, $_args) { extract($_args)
 ?><body>
 
 <h1>Příspěvky</h1>
@@ -31,21 +31,25 @@ if (!function_exists($_l->blocks['content'][] = '_lb90b758e0d9_content')) { func
                 <td><?php echo Nette\Templating\Helpers::escapeHtml($Prispevek->vyse_prispevku, ENT_NOQUOTES) ?> Kč</td>
                 <td><?php echo Nette\Templating\Helpers::escapeHtml($template->date($Prispevek->platnost_od, '%d.%m.%Y'), ENT_NOQUOTES) ?></td>
                 <td><?php echo Nette\Templating\Helpers::escapeHtml($template->date($Prispevek->platnost_do, '%d.%m.%Y'), ENT_NOQUOTES) ?></td>
-                <td class="edit"><a class="button" href="<?php echo htmlSpecialChars($_control->link("Prispevek:edit", array($Prispevek->id))) ?>
+<?php if (($user->isInRole("admin")) || ($user->isInRole("lekarnik"))): ?>
+                  <td class="edit"><a class="button" href="<?php echo htmlSpecialChars($_control->link("Prispevek:edit", array($Prispevek->id))) ?>
 ">Upravit</a> 
-                    <a class="button" onClick="return confirm('Opravdu smazat prispevek ?')"  href="<?php echo htmlSpecialChars($_control->link("Prispevek:delete", array($Prispevek->id))) ?>
+                      <a class="button" onClick="return confirm('Opravdu smazat prispevek ?')"  href="<?php echo htmlSpecialChars($_control->link("Prispevek:delete", array($Prispevek->id))) ?>
 ">Smazat</a>
-                </td>
+                  </td>
+<?php endif ?>
             </tr> 
 <?php $iterations++; endforeach ?>
 </table>
 
 </br>
 
-<div align=center>
-<a class="button" href="<?php echo htmlSpecialChars($_control->link("Prispevek:create")) ?>
+<?php if (($user->isInRole("admin")) || ($user->isInRole("lekarnik"))): ?>
+  <div align=center>
+  <a class="button" href="<?php echo htmlSpecialChars($_control->link("Prispevek:create")) ?>
 ">Vložit nový</a>
-</div>
+  </div>
+<?php endif ?>
 
 </body><?php
 }}

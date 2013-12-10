@@ -1,23 +1,23 @@
-<?php //netteCache[01]000397a:2:{s:4:"time";s:21:"0.44287800 1386682271";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:75:"C:\Users\hp\Skola\3_tretak\IIS\projekt\pharmacy\app\templates\@layout.latte";i:2;i:1386682267;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000397a:2:{s:4:"time";s:21:"0.88317300 1386685685";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:75:"C:\Users\hp\Skola\3_tretak\IIS\projekt\pharmacy\app\templates\@layout.latte";i:2;i:1386685666;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\Users\hp\Skola\3_tretak\IIS\projekt\pharmacy\app\templates\@layout.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'rny6hx2m9s')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'j5dz6n8mdd')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block head
 //
-if (!function_exists($_l->blocks['head'][] = '_lb19917761a3_head')) { function _lb19917761a3_head($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['head'][] = '_lb8e4f997093_head')) { function _lb8e4f997093_head($_l, $_args) { extract($_args)
 ;
 }}
 
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lb479a636088_title')) { function _lb479a636088_title($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['title'][] = '_lba303aaa509_title')) { function _lba303aaa509_title($_l, $_args) { extract($_args)
 ?>                <h1><?php echo Nette\Templating\Helpers::escapeHtml(isset($nadpis) ? $nadpis : "Lékárna", ENT_NOQUOTES) ?></h1>
 <?php
 }}
@@ -25,7 +25,7 @@ if (!function_exists($_l->blocks['title'][] = '_lb479a636088_title')) { function
 //
 // block scripts
 //
-if (!function_exists($_l->blocks['scripts'][] = '_lb25ec4d6bf0_scripts')) { function _lb25ec4d6bf0_scripts($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['scripts'][] = '_lb3f97c2f09f_scripts')) { function _lb3f97c2f09f_scripts($_l, $_args) { extract($_args)
 ?>	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/jquery.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/netteForms.js"></script>
 	<script src="<?php echo htmlSpecialChars($basePath) ?>/js/main.js"></script>
@@ -100,7 +100,7 @@ call_user_func(reset($_l->blocks['head']), $_l, get_defined_vars())  ?>
                 <ul class="menu-list">
                   <li> <a href="index.php">Lékárna</a></li>
                   <li> <a href="<?php echo htmlSpecialChars($_control->link("Lek:default")) ?>
-">Seznam léků</a></li> 
+">Seznam prodávaných léků</a></li> 
                   <li> <a href="<?php echo htmlSpecialChars($_control->link("Pobocka:default")) ?>
 ">Seznam poboček</a></li>       
                   <li> <a href="<?php echo htmlSpecialChars($_control->link("Prispevek:default")) ?>

@@ -4,7 +4,6 @@
 
 <h1>Seznam léků</h1>
 
-
 <table align=center>
     <tr>
         <th>Název</th>
@@ -17,17 +16,22 @@
                 <td>{$Lek->nazev}</td>
                 <td>{$Lek->ucinna_latka}</td>
                 <td>{$Lek->predpis ? "ano" : "-"}</td>
-                <td class="edit"><a class="button" n:href="Lek:edit $Lek->ID">Upravit</a>
-                    <a class="button" n:href="Lek:delete $Lek->ID" onClick="return confirm('Opravdu smazat {$Lek->nazev} ?')" >Smazat</a>
-                </td>
+                
+                {if ($user->isInRole("admin")) || ($user->isInRole("lekarnik"))}
+                  <td class="edit">
+                      <a class="button" n:href="Lek:edit $Lek->ID">Upravit</a>
+                      <a class="button" n:href="Lek:delete $Lek->ID" onClick="return confirm('Opravdu smazat {$Lek->nazev} ?')" >Smazat</a>
+                  </td>
+                {/if} 
             </tr> 
         {/foreach}
 </table>
 
 </br>
-
+{if ($user->isInRole("admin")) || ($user->isInRole("lekarnik"))}
 <div align=center>
 <a class="button" n:href="Lek:create">Vložit nový</a>
 </div>
+{/if}
 
 </body>
