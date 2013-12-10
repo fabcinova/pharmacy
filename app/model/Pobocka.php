@@ -57,4 +57,9 @@ class Pobocka extends Model{
     {
         return new Adresa($this->adresa);
     }
+    
+    public function nakup()
+    {
+        $update_sklad = "UPDATE `sklady` SET lek=%i WHERE ";
+    }
 }

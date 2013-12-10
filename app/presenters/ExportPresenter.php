@@ -30,7 +30,7 @@ class ExportPresenter extends BasePresenter
         $form = new Form();
         
         
-        $form->addSelect("pojistovna", "Poji¹»ovna", $array_pojistovna);
+        $form->addSelect("pojistovna", "Pojiï¿½ï¿½ovna", $array_pojistovna);
         $form->addText("od", "Od");
         $form->addText("do", "Do");
         $form->addSubmit("exportovat", "Exportovat");
@@ -73,23 +73,25 @@ class ExportPresenter extends BasePresenter
         
         try{
             $query = "SELECT *
-            FROM prispevky
-            WHERE pojistovna=%s AND platnost_od>=%d AND platnost_do<=%";
+            FROM nakupy
+            WHERE datum>=%d AND datum<=%d";
             
-            dibi::query($query, $values->pojistovna, $values->od, $values->do);
+            $result = dibi::query($query, $values->od, $values->do);
             
-            foreach (dibi::query($query) as $row){
-               $array[] = new Prispevek ($row->id);
+            foreach ($result as $row)
+            {
+               $array[] = new Nakup($row->id);
             }
+            
             dump($array);
                         
         }
         catch(Exception $ex)
         {   
-            $this->flashMessage("Chyba: Vyhledávání v databázi selhalo.", "error");
+            $this->flashMessage("Chyba: VyhledÃ¡vÃ¡nÃ­ v databÃ¡zi selhalo.", "error");
         } 
         
-        $this->flashMessage("Exportováno.");
+        $this->flashMessage("ExportovÃ¡no.");
         //$this->redirect("Export:default");
     }
     
