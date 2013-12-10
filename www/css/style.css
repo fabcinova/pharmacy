@@ -112,11 +112,6 @@ footer { font-size: 70%; padding: 1em 0; color: gray; }
         font-size: medium;
         text-align: center;
         }
-        
-#sign{
-     padding: 20px 35px ;
-     }
-
 
 table
 {
@@ -185,5 +180,5 @@ table td
     }
     
 .edit_tab{
-         padding: 55px ;
+         padding: 55px;
          }
