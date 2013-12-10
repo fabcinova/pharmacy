@@ -1,22 +1,33 @@
 {block #content}
 
-<h1>Leky</h1>
+<body>
 
-<a n:href="Lek:create">Vložit nový</a>
+<h1>Seznam léků</h1>
 
-<table>
+
+<table align=center>
     <tr>
         <th>Název</th>
         <th>Účinná látka</th>
         <th>Předpis</th>
+        <th class="edit"></th>
     </tr>
         {foreach $leky as $Lek}
-            <tr>
+            <tr align=center>
                 <td>{$Lek->nazev}</td>
                 <td>{$Lek->ucinna_latka}</td>
                 <td>{$Lek->predpis ? "ano" : "-"}</td>
-                <td><a n:href="Lek:edit $Lek->ID">Upravit</a></td>
-                <td><a n:href="Lek:delete $Lek->ID" onClick="return confirm('Opravdu smazat {$Lek->nazev} ?')" >Smazat</a></td>
+                <td class="edit"><a class="button" n:href="Lek:edit $Lek->ID">Upravit</a>
+                    <a class="button" n:href="Lek:delete $Lek->ID" onClick="return confirm('Opravdu smazat {$Lek->nazev} ?')" >Smazat</a>
+                </td>
             </tr> 
         {/foreach}
 </table>
+
+</br>
+
+<div align=center>
+<a class="button" n:href="Lek:create">Vložit nový</a>
+</div>
+
+</body>

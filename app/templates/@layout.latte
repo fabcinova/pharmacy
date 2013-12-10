@@ -25,13 +25,14 @@
 <body>
         <div id="banner">
                 <h1 n:block=title>{isset($nadpis) ? $nadpis : "Lékárna"}</h1>
-                <div id="user">
+                <div id="user" align=right>
+                
                     {if $user->isLoggedIn()}
-                    <a n:href="Sign:out">Odhlásit {$user->id}</a><small> {implode(", ", $user->roles)} </small></div>
+                    <a class="signbutton" n:href="Sign:out">Odhlásit {$user->id}</a></div>
                     {else}
-                    <a n:href="Sign:in">Přihlásit se</a></div>
+                    <a class="signbutton" n:href="Sign:in">Přihlásit se</a></div
                     {/if}
-                </div>
+                </div>   
         </div>
         <div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
 
@@ -39,9 +40,9 @@
             
             <div id="menu">
                 <ul class="menu-list">
-                  <li> <a n:href="Lek:default">Seznam leku</a></li> 
-                  <li> <a n:href="Pobocka:default">Seznam pobocek</a></li>       
-                  <li> <a n:href="Prispevek:default">Importovat prispevky</a></li>
+                  <li> <a n:href="Lek:default">Seznam léků</a></li> 
+                  <li> <a n:href="Pobocka:default">Seznam poboček</a></li>       
+                  <li> <a n:href="Prispevek:default">Importovat příspěvky</a></li>  
                 </ul>           
             </div>
             

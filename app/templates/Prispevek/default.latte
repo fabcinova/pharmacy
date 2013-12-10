@@ -1,10 +1,11 @@
 {block #content}
 
-<h1>Prispevky</h1>
+<body>
 
-<a n:href="Prispevek:create">Vložit nový</a>
+<h1>Příspěvky</h1>
 
-<table>
+
+<table align=center>
     <tr>
         <th>Lék</th>
         <th>Pojišťovna</th>
@@ -13,14 +14,23 @@
         <th>Platnost D0</th>
     </tr>
         {foreach $prispevky as $Prispevek}
-            <tr>
+            <tr align=center>
                 <td>{$Prispevek->Lek->nazev}</td>
                 <td>{$Prispevek->Pojistovna->nazev}</td>
                 <td>{$Prispevek->vyse_prispevku} Kč</td>
                 <td>{$Prispevek->platnost_od|date:'%d.%m.%Y'}</td>
                 <td>{$Prispevek->platnost_do|date:'%d.%m.%Y'}</td>
-                <td><a n:href="Prispevek:edit $Prispevek->id">Upravit</a></td>
-                <td><a n:href="Prispevek:delete $Prispevek->id" onClick="return confirm('Opravdu smazat prispevek ?')" >Smazat</a></td>
+                <td class="edit"><a class="button" n:href="Prispevek:edit $Prispevek->id">Upravit</a> 
+                    <a class="button" n:href="Prispevek:delete $Prispevek->id" onClick="return confirm('Opravdu smazat prispevek ?')" >Smazat</a>
+                </td>
             </tr> 
         {/foreach}
 </table>
+
+</br>
+
+<div align=center>
+<a class="button" n:href="Prispevek:create">Vložit nový</a>
+</div>
+
+</body>
