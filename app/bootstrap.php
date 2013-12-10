@@ -19,7 +19,7 @@ dibi::connect(array(
 $configurator = new Nette\Config\Configurator;
 
 // Enable Nette Debugger for error visualisation & logging
-$configurator->setDebugMode(TRUE);
+$configurator->setDebugMode(FALSE);
 $configurator->enableDebugger(__DIR__ . '/../log');
 
 // Specify folder for cache
