@@ -1,16 +1,16 @@
-<?php //netteCache[01]000406a:2:{s:4:"time";s:21:"0.53216200 1386632912";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:84:"C:\Users\hp\Skola\3_tretak\IIS\projekt\pharmacy\app\templates\Homepage\default.latte";i:2;i:1386632908;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000406a:2:{s:4:"time";s:21:"0.41711700 1386633261";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:84:"C:\Users\hp\Skola\3_tretak\IIS\projekt\pharmacy\app\templates\Homepage\default.latte";i:2;i:1386633256;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\Users\hp\Skola\3_tretak\IIS\projekt\pharmacy\app\templates\Homepage\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '3gwgeg25gq')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'inl0xmkdb4')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb129f5267eb_content')) { function _lb129f5267eb_content($_l, $_args) { extract($_args)
+if (!function_exists($_l->blocks['content'][] = '_lb31624160a2_content')) { function _lb31624160a2_content($_l, $_args) { extract($_args)
 ?><link rel="stylesheet" media="screen,projection,tv" href="<?php echo htmlSpecialChars($basePath) ?>/css/style.css" />
 
 <body>
@@ -19,15 +19,15 @@ if (!function_exists($_l->blocks['content'][] = '_lb129f5267eb_content')) { func
   </div>
   
   <div id=hp_text>
-    <CENTER>
-    <B>Vítejte v informačním systému naší lékárny. </br>
-        
-    Dnes je <?php echo Date ("j.n.Y")?>   </br>   
- 
-    Otevírací doba všech poboček:</B>  </br>
-    Po-Pá 8-12 13-17   </br>
-    So-Ne 9-12            </br>
-    </CENTER>
+    <B>
+      Vítejte v informačním systému naší lékárny. </br>   
+      Dnes je <?php echo Date ("j.n.Y")?> </br>   
+      Otevírací doba všech poboček: </br>
+    </B>
+    
+    Po-Pá 8-12 13-17 </br>
+    So-Ne 9-12 </br>
+    
   </div>
 </body><?php
 }}

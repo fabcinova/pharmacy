@@ -95,7 +95,6 @@ footer { font-size: 70%; padding: 1em 0; color: gray; }
       min-height: 500px;
       width: 100%;
       background: #9FD6FD;
-      overflow: auto;
       clear: both;
       }
 
@@ -111,4 +110,9 @@ footer { font-size: 70%; padding: 1em 0; color: gray; }
         
 #hp_text{
         font-size: medium;
+        text-align: center;
         }
+        
+#sign{
+     padding: 20px 35px ;
+     }

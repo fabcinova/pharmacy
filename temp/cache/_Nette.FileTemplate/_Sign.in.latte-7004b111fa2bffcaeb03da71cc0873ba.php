@@ -1,28 +1,33 @@
-<?php //netteCache[01]000397a:2:{s:4:"time";s:21:"0.36279700 1386528118";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:75:"C:\Users\hp\Skola\3_tretak\IIS\projekt\pharmacy\app\templates\Sign\in.latte";i:2;i:1386528087;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000397a:2:{s:4:"time";s:21:"0.32452000 1386633950";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:75:"C:\Users\hp\Skola\3_tretak\IIS\projekt\pharmacy\app\templates\Sign\in.latte";i:2;i:1386633946;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: C:\Users\hp\Skola\3_tretak\IIS\projekt\pharmacy\app\templates\Sign\in.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'obkuk07767')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'ed2uwgiqg0')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb95d9cf9f18_content')) { function _lb95d9cf9f18_content($_l, $_args) { extract($_args)
-;call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())  ?>
-
+if (!function_exists($_l->blocks['content'][] = '_lb95b98d86fc_content')) { function _lb95b98d86fc_content($_l, $_args) { extract($_args)
+?><body>
+  <div id="sign">
+    
+    
+<?php call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())  ?>
+    
 <?php $_ctrl = $_control->getComponent("signInForm"); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render() ?>
-
-<?php
+    
+      </div>
+</body><?php
 }}
 
 //
 // block title
 //
-if (!function_exists($_l->blocks['title'][] = '_lbf845dda5c5_title')) { function _lbf845dda5c5_title($_l, $_args) { extract($_args)
-?><h1>Sign in</h1>
+if (!function_exists($_l->blocks['title'][] = '_lbefbc33b810_title')) { function _lbefbc33b810_title($_l, $_args) { extract($_args)
+?>    <h1>Sign in</h1>
 <?php
 }}
 
@@ -45,8 +50,11 @@ if ($_l->extends) {
 //
 // main template
 //
-$robots = 'noindex' ?>
+?>
+<link rel="stylesheet" media="screen,projection,tv" href="<?php echo htmlSpecialChars($basePath) ?>/css/style.css" />
 
+<?php $robots = 'noindex' ?>
+    
 
 <?php if ($_l->extends) { ob_end_clean(); return Nette\Latte\Macros\CoreMacros::includeTemplate($_l->extends, get_defined_vars(), $template)->render(); }
 call_user_func(reset($_l->blocks['content']), $_l, get_defined_vars()) ; 
