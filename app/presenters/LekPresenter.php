@@ -98,7 +98,9 @@ class LekPresenter extends BasePresenter {
             $this->flashMessage("Lek neexistuje!", "error");
             $this->redirect("Lek:default");
         }
+        
         //TODO skontrolovat opravnenia uzivatelov
+        // if (!$this->rights(self::ROLE_USER))
         
         $lek->nazev = $values->nazev;
         $lek->ucinna_latka = $values->ucinna_latka;

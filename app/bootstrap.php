@@ -10,9 +10,9 @@ require __DIR__. '/../libs/dibi/dibi.php';
 dibi::connect(array(
     'driver'   => 'mysql',
     'host'     => 'localhost',
-    'username' => 'root',
-    'password' => '',
-    'database' => 'pharmacy',
+    'username' => 'xfabci00',
+    'password' => 'befoco4m',
+    'database' => 'xfabci00',
     'charset'  => 'utf8',
 ));
 

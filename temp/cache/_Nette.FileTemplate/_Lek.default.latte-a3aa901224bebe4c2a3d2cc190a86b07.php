@@ -1,39 +1,55 @@
-<?php //netteCache[01]000377a:2:{s:4:"time";s:21:"0.51038800 1386436869";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:55:"D:\git_projects\lekarna\app\templates\Lek\default.latte";i:2;i:1386436858;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
+<?php //netteCache[01]000377a:2:{s:4:"time";s:21:"0.07751300 1386690618";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:55:"D:\git_projects\lekarna\app\templates\Lek\default.latte";i:2;i:1386689813;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"80a7e46 released on 2013-08-08";}}}?><?php
 
 // source file: D:\git_projects\lekarna\app\templates\Lek\default.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'o11wthgl1a')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, '2n2njrw3z6')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
 // block content
 //
-if (!function_exists($_l->blocks['content'][] = '_lb5fddaeae3c_content')) { function _lb5fddaeae3c_content($_l, $_args) { extract($_args)
-?><h1>Leky</h1>
+if (!function_exists($_l->blocks['content'][] = '_lbcaa36de79f_content')) { function _lbcaa36de79f_content($_l, $_args) { extract($_args)
+?><body>
 
-<a href="<?php echo htmlSpecialChars($_control->link("Lek:create")) ?>">Vložit nový</a>
+<h1>Seznam léků</h1>
 
-<table>
+<table align=center>
     <tr>
         <th>Název</th>
         <th>Účinná látka</th>
         <th>Předpis</th>
+        <th class="edit"></th>
     </tr>
 <?php $iterations = 0; foreach ($leky as $Lek): ?>
-            <tr>
+            <tr align=center>
                 <td><?php echo Nette\Templating\Helpers::escapeHtml($Lek->nazev, ENT_NOQUOTES) ?></td>
                 <td><?php echo Nette\Templating\Helpers::escapeHtml($Lek->ucinna_latka, ENT_NOQUOTES) ?></td>
                 <td><?php echo Nette\Templating\Helpers::escapeHtml($Lek->predpis ? "ano" : "-", ENT_NOQUOTES) ?></td>
-                <td><a href="<?php echo htmlSpecialChars($_control->link("Lek:edit", array($Lek->ID))) ?>
-">Upravit</a></td>
-                <td><a onClick="return confirm('Opravdu smazat <?php echo htmlSpecialChars(Nette\Templating\Helpers::escapeJs($Lek->nazev)) ?>
+                
+<?php if (($user->isInRole("admin")) || ($user->isInRole("lekarnik"))): ?>
+                  <td class="edit">
+                      <a class="button" href="<?php echo htmlSpecialChars($_control->link("Lek:edit", array($Lek->ID))) ?>
+">Upravit</a>
+                      <a class="button" onClick="return confirm('Opravdu smazat <?php echo htmlSpecialChars(Nette\Templating\Helpers::escapeJs($Lek->nazev)) ?>
  ?')"  href="<?php echo htmlSpecialChars($_control->link("Lek:delete", array($Lek->ID))) ?>
-">Smazat</a></td>
+">Smazat</a>
+                  </td>
+<?php endif ?>
             </tr> 
 <?php $iterations++; endforeach ?>
-</table><?php
+</table>
+
+</br>
+<?php if (($user->isInRole("admin")) || ($user->isInRole("lekarnik"))): ?>
+<div align=center>
+<a class="button" href="<?php echo htmlSpecialChars($_control->link("Lek:create")) ?>
+">Vložit nový</a>
+</div>
+<?php endif ?>
+
+</body><?php
 }}
 
 //

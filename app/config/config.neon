@@ -16,9 +16,9 @@ common:
 			errorPresenter: Error
 
 		database:
-			dsn: 'mysql:host=localhost;dbname=pharmacy'
-			user: 'root'
-			password: ''
+			dsn: 'mysql:host=localhost;dbname=xfabci00'
+			user: 'xfabci00'
+			password: 'befoco4m'
 
 		session:
 			expiration: 14 days
