@@ -41,7 +41,7 @@ class Pobocka extends Model{
 
         foreach (dibi::query($query) as $row)
         {
-           $array[] = new Adresa($row->id);
+           $array[$row->id] = new Adresa($row->id);
         }
        
         return $array;
@@ -51,5 +51,10 @@ class Pobocka extends Model{
     {
         $query = "DELETE FROM `pobocky` WHERE `ID` = %i;";
         dibi::query($query, $id);
+    }
+    
+    public function getAdresa()
+    {
+        return new Adresa($this->adresa);
     }
 }

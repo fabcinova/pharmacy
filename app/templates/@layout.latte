@@ -48,7 +48,10 @@
                   <li> <a href="index.php">Lékárna</a></li>
                   <li> <a n:href="Lek:default">Seznam prodávaných léků</a></li> 
                   <li> <a n:href="Pobocka:default">Adresy poboček</a></li>       
-                  <li> <a n:href="Prispevek:default">Příspěvky</a></li>  
+                  <li> <a n:href="Prispevek:default">Příspěvky</a></li>
+                    {if ($user->isInRole("lekarnik"))}
+                      <li> <a n:href="Nakup:default">Nákupy</a></li>
+                    {/if}
                 </ul>           
             </div>
             
