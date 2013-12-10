@@ -37,30 +37,48 @@
 <tr><th>Login</th><th>Heslo</th><th>Role</th></tr>
 <tr><td>admin</td><td>admin</td><td>Administrátor</td></tr>
 <tr><td>lekarnik</td><td>lekarnik</td><td>Lékárník</td></tr>
-<tr><td>user</td><td>user</td><td>Zákazník</td></tr>
 </table>
 
 <h2>Implementace</h2>
-<p>Struèná dokumentace k implementaci, která popisuje, které PHP skripty implementují jednotlivé pøípady pou¾ití 
-uvedené v use-case diagramu z IDS. V pøípadì, µe bylo nutno pøi implementaci uèinit zmìny v návrhu, 
-musí být v dokumentaci zdùvodnìny.</p>
-<p>Be¾ný u¾ivateµ - guest má mo¾nos» zobrazi» si lieky, ktoré má lekáreò vo svojom sortimente.</p>
-<p>Be¾ný u¾ivateµ - guest má mo¾nos» zobrazi» si adresy v¹etkých poboèiek.</p>
-<p>U¾ivateµ, ktorý má rolu lékárnik je schopný vykonáva» CRUD (create, read, update, delete) operácie s liekmi, ktoré má lekáreò vo svojom sortimente.</p>
-<p></p>
+<ul>
+<li>Be¾ný u¾ivateµ - guest má mo¾nos» zobrazi» si lieky, ktoré má lekáreò vo svojom sortimente.</li>
+<li>Be¾ný u¾ivateµ - guest má mo¾nos» zobrazi» si adresy v¹etkých poboèiek.</li>
+<li>Be¾ný u¾ivateµ - guest má mo¾nos» zobrazi» si v¹etky príspevky jednotlivých pois»ovní na jednotlivé lieky.</li>
+<li>U¾ivateµ lékárnik je schopný vykonáva» CRUD (create, read, update, delete) operácie s liekmi, ktoré má lekáreò vo svojom sortimente.</li>
+<li>U¾ivateµ lékárnik má mo¾nos» zobrazi» si adresy v¹etkých poboèiek.</li>
+<li>U¾ivateµ lékárnik je schopný vykonáva» CRUD (create, read, update, delete) operácie s príspevkami jednotlivých pois»ovní na jednotlivé lieky.</li>
+<li>U¾ivateµ lékárnik má mo¾nos» exportova» výkazy pre pois»ovne.</li>
+<li>U¾ivateµ lékárnik je schopný vykonáva» CRUD (create, read, update, delete) operácie s nákupmi liekov.</li>
+<li>U¾ivateµ admin má rovnaké práva ako lékárnik s tým rozdielom, ¾e nemô¾e manipulova» v nákupmi liekov.</li>
+</ul>
+
+<p>Zmeny v návrhu: výkazy sa neexportujú v pevne danom èase, lékárnik ich exportuje manuálne.</p>
+
+<p>Bol pou¾itý návrhový vzor MVC a framework Nette, tj:<br/>
+	V modeloch sa realizujú predov¹tkým databázové po¾iadavky,<br/>
+	presentery tvoria medzivrstvu, ktorá volá funkcie z modelov a posiela ich do view a naopak<br/>
+	view zobrazuje u¾ivateµom dáta v prehµadných tabuµkách a sprístupòuje im odkazy na CRUD akcie.</p>
 
 <h2>Instalace</h2>
 <ul>
-<li>Struènì popi¹te postup instalace na server</li>
-<li>Softwarové po¾adavky (verze PHP apod.)</li>
-<li>Jak rozbalit, konfigurovat, inicializovat databází, ...</li>
+<li>In¹talácia na server spoèívala v nahraní súborov pomocou protokolu FTP a následnom nastavení u¾ivateµských práv ($ chmod 775)</li>
+<li>Pou¾ívame framwork Nette vo verzii 2.0.13 a PHP vo verzii 5.4.16</li>
+<li>Databáza s názvom pharmacy.php je dostupná v zlo¾ke DB. Staèí ju importova» cez phpmyadmin do databáze 'xfabcii00' u¾ivateµa 'xfabci00'.</li>
 </ul>
 
 <h2>Známé problémy</h2>
-<p></p>
-<p>Zde popi¹te, které body zadání (IDS a IIS) nejsou implementovány a z jakého dùvodu. 
-Napø. &bdquo;Z èasových dùvodù nebyla implementována správa uµivatelù.&rdquo; 
-Pomù¾ete tím zrychlit opravování, kdy¾ neimplementované funkce nebudeme muset dlouze hledat.</p>
+<p>Body zadania, ktoré neboli implementované:
+<ul>
+<li>Export výkazov pre zdravotné pois»ovne nie je plne funkèný a to predov¹etkým z dôvodov nie úplne vhodného návrhu, èo sme ale zistili a¾ takmer ku koncu implementácie a preto by bolo viac ne¾ nároèné upravova» návrh a ¹truktúru celej aplikácie.</li>
+</ul>
+</p>
+
+</p>
+<p>Body zadania, ktoré boli implementované inak, ne¾ bolo zadané:
+<ul>
+<li>Príspevky od pois»ovní sa neimportujú zo súboru, je potreba, aby ich lekárnik vlo¾il, prípadne upravil priamo v aplikácii.</li>
+</ul>
+</p>
 
 </body>
 </html>
