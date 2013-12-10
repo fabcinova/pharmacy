@@ -318,9 +318,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`) VALUES
-(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'admin'),
-(2, 'lekarnik', '630a70eaac87e55995a4e06730eb24ead8cdacb0', 'lekarnik'),
-(3, 'user', '12dea96fec20593566ab75692c9949596833adc9', 'user');
+(1, 'admin', SHA1('admin'), 'admin'),
+(2, 'lekarnik', SHA1('lekarnik'), 'lekarnik');
 
 --
 -- Omezení pro exportované tabulky
