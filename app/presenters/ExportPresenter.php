@@ -102,7 +102,7 @@ class ExportPresenter extends BasePresenter
             $this->flashMessage("Chyba: Vyhledávání v databázi selhalo.", "error");
         } 
         
-        $this->flashMessage("Exportováno.");
+        $this->flashMessage("Exportováno do souboru \"Export.txt\" v adresáři projektu.");
         //$this->redirect("Export:default");
     }
     
